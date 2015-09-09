@@ -1,0 +1,41 @@
+
+blood_magic_1 = {
+	ruler_designer_cost	= 20
+	opposites = { }
+    customizer = yes
+	random = no	
+	cached = yes
+	
+}	
+blood_magic_2 = {
+	ruler_designer_cost	= 20
+	opposites = { }
+    customizer = yes
+	random = no	
+	cached = yes
+	
+}	
+blood_magic_3 = {
+	ruler_designer_cost	= 20
+	opposites = { }
+    customizer = yes
+	random = no	
+	cached = yes
+	
+}	
+blood_magic_4 = {
+	ruler_designer_cost	= 20
+	opposites = { }
+    customizer = yes
+	random = no	
+	cached = yes
+	
+}	
+blood_magic_5 = {
+	ruler_designer_cost	= 20
+	opposites = { }
+    customizer = yes
+	random = no	
+	cached = yes
+	
+}

@@ -1,0 +1,24 @@
+
+magic_power_1 = { 
+	icon = 13
+}
+magic_power_2 = { 
+	icon = 13
+}
+magic_power_3 = { 
+	icon = 13
+}	
+magic_power_4 = { 
+	icon = 13
+}
+magic_power_5 = { 
+	icon = 13
+}
+
+magic_power_6 = { 
+	icon = 13
+}
+
+magic_cooldown = {
+	icon = 13
+}

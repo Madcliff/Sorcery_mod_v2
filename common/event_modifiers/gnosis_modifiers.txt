@@ -1,0 +1,3 @@
+school_gnosis_magic_cooldown = {
+	icon = 13
+}

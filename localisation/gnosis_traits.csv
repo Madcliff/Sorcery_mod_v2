@@ -1,0 +1,11 @@
+school_gnosis_1;Gnostic Inniate.;x
+school_gnosis_2;Gnostic Sorcerer;x
+school_gnosis_3;Gnostic Sorcerer of Rank;x
+school_gnosis_4;Gnostic Master;x
+school_gnosis_5;Gnostic Grand Master;x
+
+school_gnosis_1_desc;You are an inniate to the mysteries of the Gnosis. You must rest for 50 days between Cants;x
+school_gnosis_2_desc;You are a Sorcerer of the Gnosis. You must rest for 40 days between Cants;x
+school_gnosis_3_desc;You are an Sorcerer of Rank of the Gnosis. You must rest for 30 days between Cants;x
+school_gnosis_4_desc;You are an Master of the mysteries of the Gnosis. You must rest for 20 days between Cants;x
+school_gnosis_5_desc;You are an Grand Master of the mysteries of the Gnosis. You must rest for 5 days between Cants;x
