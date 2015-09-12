@@ -73,20 +73,20 @@ obj_study_the_gnosis = {
 	abort_effect = {
 	}
 	effect = {
-		random_list = {
-		  25 = {
-			give_nickname = nick_the_strange
-		  }
-		  25 = {
-			give_nickname = nick_the_arcane
-		  }
-		  25 = {
-			give_nickname = nick_master_of_hidden_secrets
-		  }
-		  25 = {
-			give_nickname = nick_master_of_the_dark 
-		  }
-		}
-	set_special_character_title = ARCHMAGE
+#		random_list = {
+#		  25 = {
+#			give_nickname = nick_the_strange
+#		  }
+#		  25 = {
+#			give_nickname = nick_the_arcane
+#		  }
+#		  25 = {
+#			give_nickname = nick_master_of_hidden_secrets
+#		  }
+#		  25 = {
+#			give_nickname = nick_master_of_the_dark 
+#		  }
+#		}
+#	set_special_character_title = ARCHMAGE
 	}
 }
