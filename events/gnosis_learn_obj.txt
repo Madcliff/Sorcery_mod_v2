@@ -9,11 +9,13 @@ character_event = {
 		has_ambition = obj_study_the_gnosis 
 		prisoner = no
 		NOT = { trait = incapable }
-		NOT = {trait = school_gnosis_1}
-		NOT = {trait = school_gnosis_2}
-		NOT = {trait = school_gnosis_3}		
-		NOT = {trait = school_gnosis_4}
-		NOT = { trait = school_gnosis_5}		
+		OR = {
+			NOT = {trait = school_gnosis_1}
+			NOT = {trait = school_gnosis_2}
+			NOT = {trait = school_gnosis_3}		
+			NOT = {trait = school_gnosis_4}
+			NOT = { trait = school_gnosis_5}		
+		}
 	}
 mean_time_to_happen = {
 	years = 5
