@@ -1,0 +1,13 @@
+on_birth = {
+	events = {
+		dynastybuff.1
+		dynastybuff.2
+	}
+
+}
+on_yearly_childhood_pulse = {
+	events = {
+		anagogiseducation.1
+		gnosiseducation.1
+	}
+}

@@ -1,0 +1,325 @@
+namespace = gnostic_cants_agonies
+
+character_event = {
+	id = gnostic_cants_agonies.99990
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		save_event_target_as = gnostic_cants_agonies_caster
+		
+		if = {
+			limit = {
+				learning = 5
+				or = {
+					trait = school_gnosis_1
+					trait = school_gnosis_2
+					trait = school_gnosis_3
+					trait = school_gnosis_4
+					trait = school_gnosis_5					
+				}
+			}
+			set_variable = { which = "spell_power" value = 1}
+		}
+		if = {
+			limit = {
+				learning = 10
+				or = {
+					trait = school_gnosis_1
+					trait = school_gnosis_2
+					trait = school_gnosis_3
+					trait = school_gnosis_4
+					trait = school_gnosis_5					
+				}				
+			}
+			change_variable = { which = "spell_power" value = 2}
+		}
+		if = {
+			limit = {
+				or = {
+					trait = school_gnosis_1
+					trait = school_gnosis_2
+					trait = school_gnosis_3
+					trait = school_gnosis_4
+					trait = school_gnosis_5					
+				}			
+				learning = 15
+			}
+			change_variable = { which = "spell_power" value = 3}
+		}
+		if = {
+			limit = {
+				learning = 20
+				or = {
+					trait = school_gnosis_1
+					trait = school_gnosis_2
+					trait = school_gnosis_3
+					trait = school_gnosis_4
+					trait = school_gnosis_5					
+				}				
+			}
+			change_variable = { which = "spell_power" value = 4}
+		}
+		if = {
+			limit = {
+				learning = 25
+				or = {
+					trait = school_gnosis_1
+					trait = school_gnosis_2
+					trait = school_gnosis_3
+					trait = school_gnosis_4
+					trait = school_gnosis_5					
+				}				
+			}
+			change_variable = { which = "spell_power" value = 5}
+		}
+		if = {
+			limit = {
+				learning = 30
+				or = {
+					trait = school_gnosis_1
+					trait = school_gnosis_2
+					trait = school_gnosis_3
+					trait = school_gnosis_4
+					trait = school_gnosis_5					
+				}				
+			}
+			change_variable = { which = "spell_power" value = 6}
+		}
+		if = {
+			limit = {
+				learning = 35
+				or = {
+					trait = school_gnosis_1
+					trait = school_gnosis_2
+					trait = school_gnosis_3
+					trait = school_gnosis_4
+					trait = school_gnosis_5					
+				}				
+			}
+			change_variable = { which = "spell_power" value = 7}
+		}
+		if = {
+			limit = {			
+				learning = 40
+				or = {
+					trait = school_gnosis_1
+					trait = school_gnosis_2
+					trait = school_gnosis_3
+					trait = school_gnosis_4
+					trait = school_gnosis_5					
+				}				
+			}
+			change_variable = { which = "spell_power" value = 8}
+		}
+		if = {
+			limit = {
+				learning = 45
+				or = {
+					trait = school_gnosis_1
+					trait = school_gnosis_2
+					trait = school_gnosis_3
+					trait = school_gnosis_4
+					trait = school_gnosis_5					
+				}				
+			}
+			change_variable = { which = "spell_power" value = 9}
+		}		
+					
+
+		character_event = { id = gnostic_cants_agonies.1}
+	}
+}
+
+
+character_event = {
+	id = gnostic_cants_agonies.1
+	desc = gnostic_cants_agonies.1_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+	immediate = {
+		change_variable = { which = "gnosiscantssung" value = 1 } 
+		change_variable = { which = "spell_powercastcount" value = 1 } 		
+	}
+	option = {
+		name = gnostic_cants_agonies.2#afflictions of the body
+		character_event = { id = gnostic_cants_agonies.2 }
+		}
+	option = {
+		name = gnostic_cants_agonies.3#afflictions of health	
+		character_event = { id = gnostic_cants_agonies.3 }
+		}
+}
+
+
+character_event = {
+	id = gnostic_cants_agonies.2
+	desc = gnostic_cants_agonies.2_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+	
+	option = {
+	`	name = gnostic_cants_agonies.2a
+		gnostic_cants_agonies_target ={
+			if = {
+				limit = {
+					not =  {
+						trait = wounded 
+					}
+				}
+			}
+		}
+		character_event = { id = gnostic_cants_agonies.201 }
+		break; 
+	}
+	option = {
+	`	name = gnostic_cants_agonies.2b
+		gnostic_cants_agonies_target ={
+			if = {
+				limit = {
+					trait = wounded
+					not =  {
+						trait = maimed 
+					}
+				}
+			}
+		}
+		character_event = { id = gnostic_cants_agonies.202 }
+		break; 
+	}
+	option = {
+	`	name = gnostic_cants_agonies.2c
+		gnostic_cants_agonies_target ={
+			if = {
+				limit = {
+					trait = maimed
+					not =  {
+						trait = infirm 
+					}
+				}
+			}
+		}
+		character_event = { id = gnostic_cants_agonies.203 }
+		break; 
+	}
+	option = {
+	`	name = gnostic_cants_agonies.2d
+		gnostic_cants_agonies_target ={
+			if = {
+				limit = {
+					trait = infirm
+					not =  {
+						trait = blinded 
+					}
+				}
+			}
+		}
+		character_event = { id = gnostic_cants_agonies.204 }
+		break; 
+	}
+	option = {
+	`	name = gnostic_cants_agonies.2e
+		gnostic_cants_agonies_target ={
+			if = {
+				limit = {
+					trait = blinded
+					not =  {
+						trait = eunuch  
+					}
+				}
+			}
+		}
+		character_event = { id = gnostic_cants_agonies.205 }
+		break; 
+	}	
+}
+
+character_event = {
+	id = gnostic_cants_agonies.201
+	desc = gnostic_cants_agonies.201_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+
+	option = {
+	`	name = gnostic_cants_agonies.201a
+		gnostic_cants_agonies_target ={
+			add_trait = wounded
+			health = -0.1
+			fertility = -0.1
+		}
+	}
+}
+
+
+character_event = {
+	id = gnostic_cants_agonies.202
+	desc = gnostic_cants_agonies.202_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+
+	option = {
+	`	name = gnostic_cants_agonies.202a
+		gnostic_cants_agonies_target ={
+			add_trait = maimed
+			health = -0.1
+			fertility = -0.1
+		}
+	}
+}
+
+
+character_event = {
+	id = gnostic_cants_agonies.203
+	desc = gnostic_cants_agonies.203_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+
+	option = {
+	`	name = gnostic_cants_agonies.203a
+		gnostic_cants_agonies_target ={
+			add_trait = infirm
+			health = -0.1
+			fertility = -0.1
+		}
+	}
+}
+
+character_event = {
+	id = gnostic_cants_agonies.204
+	desc = gnostic_cants_agonies.204_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+
+	option = {
+		name = gnostic_cants_agonies.203a
+		gnostic_cants_agonies_target ={
+			add_trait = blinded
+			health = -0.1
+			fertility = -0.1
+		}
+	}
+}
+
+
+character_event = {
+	id = gnostic_cants_agonies.204
+	desc = gnostic_cants_agonies.204_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+
+	option = {
+	`	name = gnostic_cants_agonies.204a
+		gnostic_cants_agonies_target ={
+			add_trait = eunuch
+			health = -0.1
+			fertility = -0.1
+		}
+	}
+}
