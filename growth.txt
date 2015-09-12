@@ -1,0 +1,94 @@
+namespace = growth
+
+
+
+character_event = {
+	id = "growth.1"
+	desc = "growth.1"
+	picture = GFX_event_roi_reincarnation
+	border = GFX_event_normal_frame_war
+    hide_window = yes	
+	trigger = {
+		OR = {
+			trait = magister
+			trait = grand_sorcerer
+			trait = sorcerer
+			trait = sorcery_adept 
+			trait = sorcery_inniate
+			}
+	}
+	
+	mean_time_to_happen  = { 
+		years = 10
+	modifier = {
+		factor = 2 # Increases chances by half
+		trait = sorcery_inniate
+	}
+	modifier = {
+		factor = 3 # Increases chances by half
+		trait = sorcery_adept
+	}
+	modifier = {
+		factor = 4 # Increases chances by half
+		trait = sorcerer
+	}
+	modifier = {
+		factor = 5 # Increases chances by half
+		trait = grand_sorcerer
+	}	
+	modifier = {
+		factor = 10 # Increases chances by half
+		trait = magister
+	}		
+	}
+	
+	option = {
+		name = "growth.1a"
+		random_list = {
+			20 = { change_diplomacy = 1 }
+			20 = { change_martial = 1 }
+			20 = { change_stewardship = 1 }
+			20 = { change_intrigue = 1 }
+			20 = { change_learning = 1 }
+		}
+		random = {
+			chance = 75
+			change_learning = 1
+		}		
+		random = {
+			chance = 75
+			fertility = 0.05 
+		}
+
+		health = 2
+	}
+}
+
+
+character_event = {
+	id = "growth.2"
+	desc = "growth.2"
+	picture = GFX_event_roi_reincarnation
+	border = GFX_event_normal_frame_war
+    hide_window = yes	
+	trigger = {
+		trait = Undying
+	}
+	
+	mean_time_to_happen  = { 
+		years = 10
+	}
+	
+	option = {
+		name = "growth.2a"
+
+		change_martial = 1
+		change_stewardship = 1
+		change_intrigue = 1
+		change_diplomacy = 1
+		change_learning = 1		
+#		fertility = 0.05
+		
+		health = 5
+	}
+}
