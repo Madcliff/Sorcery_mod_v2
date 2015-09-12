@@ -1,0 +1,67 @@
+targetted_decisions = {
+	gnostic_war_cants = {
+		ai_target_filter = self
+		filter = sub_realm
+		
+		from_potential = {
+			
+		}
+		potential = {
+			age = 16
+			OR = {
+				trait = school_gnosis_1
+				trait = school_gnosis_2
+				trait = school_gnosis_3
+				trait = school_gnosis_4
+				trait = school_gnosis_5					
+			}		
+			OR = { character = FROM
+				liege = { character = FROM } }
+
+			NOR = { 
+				trait = incapable
+			}
+		}
+	
+		allow = {
+			in_command = yes
+			NOT = {
+				has_character_modifier = school_gnosis_magic_cooldown 
+#				High Magic is Immune to the province drain magic effect. 
+#				OR = {
+#					location = { has_province_modifier = magic_drain}
+#					has_character_modifier =  magic_cooldown
+#				} High Magic is Immune to 
+			}
+			OR = {
+				trait = school_gnosis_1
+				trait = school_gnosis_2
+				trait = school_gnosis_3
+				trait = school_gnosis_4
+				trait = school_gnosis_5					
+			}					
+		}
+	
+		effect = {
+			character_event = {id = gnostic_war_cants.99990}
+		}
+		ai_will_do = {
+			#Factors for an AI character to take the decision (1 = 100% chance)
+			factor = 0.01
+			modifier = {
+				factor = 10
+				OR = {
+					trait = wroth
+					trait = cruel
+				}
+			}
+
+			modifier = {
+				factor = 100
+				is_primary_war_attacker = yes
+			}
+			
+		}		
+	}
+}
+
