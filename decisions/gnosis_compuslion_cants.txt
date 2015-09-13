@@ -11,9 +11,15 @@ targetted_decisions = {
 				trait = school_gnosis_2
 				trait = school_gnosis_3
 				trait = school_gnosis_4
+<<<<<<< HEAD
+				trait = school_gnosis_5			
+			}
+				NOT = { has_character_modifier = school_gnosis_magic_cooldown }				
+=======
 				trait = school_gnosis_5		
 			}
 				NOT = { has_character_modifier = school_gnosis_magic_cooldown }					
+>>>>>>> master
 		}
 	
 		potential = {
