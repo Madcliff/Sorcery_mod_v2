@@ -147,7 +147,7 @@ character_event = {
 		character_event = { id = gnostic_cants_agonies.2 }
 		}
 	option = {
-		name = gnostic_cants_agonies.3#afflictions of health	
+		name = gnostic_cants_agonies.3#afflictions of mind	
 		character_event = { id = gnostic_cants_agonies.3 }
 		}
 }
@@ -161,78 +161,63 @@ character_event = {
 	is_triggered_only = yes
 	
 	option = {
-	`	name = gnostic_cants_agonies.2a
-		gnostic_cants_agonies_target ={
-			if = {
-				limit = {
-					not =  {
-						trait = wounded 
-					}
+		name = gnostic_cants_agonies.2a
+		trigger = {
+			event_target:gnostic_cants_agonies_target ={
+				not =  {
+					trait = wounded 
 				}
 			}
 		}
 		character_event = { id = gnostic_cants_agonies.201 }
-		break; 
 	}
 	option = {
-	`	name = gnostic_cants_agonies.2b
-		gnostic_cants_agonies_target ={
-			if = {
-				limit = {
-					trait = wounded
-					not =  {
-						trait = maimed 
-					}
+		name = gnostic_cants_agonies.2b
+		trigger = {
+			event_target:gnostic_cants_agonies_target ={
+				trait = wounded
+				not =  {
+					trait = maimed 
 				}
 			}
 		}
 		character_event = { id = gnostic_cants_agonies.202 }
-		break; 
 	}
 	option = {
-	`	name = gnostic_cants_agonies.2c
-		gnostic_cants_agonies_target ={
-			if = {
-				limit = {
-					trait = maimed
-					not =  {
-						trait = infirm 
-					}
+		name = gnostic_cants_agonies.2c
+		trigger = {
+			event_target:gnostic_cants_agonies_target ={
+				trait = maimed
+				not =  {
+					trait = infirm 
 				}
 			}
 		}
 		character_event = { id = gnostic_cants_agonies.203 }
-		break; 
 	}
 	option = {
-	`	name = gnostic_cants_agonies.2d
-		gnostic_cants_agonies_target ={
-			if = {
-				limit = {
-					trait = infirm
-					not =  {
-						trait = blinded 
-					}
+		name = gnostic_cants_agonies.2d
+		trigger = {
+			event_target:gnostic_cants_agonies_target ={
+				trait = infirm
+				not =  {
+					trait = blinded 
 				}
 			}
 		}
 		character_event = { id = gnostic_cants_agonies.204 }
-		break; 
 	}
 	option = {
-	`	name = gnostic_cants_agonies.2e
-		gnostic_cants_agonies_target ={
-			if = {
-				limit = {
-					trait = blinded
-					not =  {
-						trait = eunuch  
-					}
+		name = gnostic_cants_agonies.2e
+		trigger = {
+			event_target:gnostic_cants_agonies_target ={
+				trait = blinded
+				not =  {
+					trait = eunuch 
 				}
 			}
 		}
 		character_event = { id = gnostic_cants_agonies.205 }
-		break; 
 	}	
 }
 
@@ -244,12 +229,21 @@ character_event = {
 	is_triggered_only = yes
 
 	option = {
-	`	name = gnostic_cants_agonies.201a
-		gnostic_cants_agonies_target ={
+		name = gnostic_cants_agonies.201a
+		event_target:gnostic_cants_agonies_target ={
 			add_trait = wounded
-			health = -0.1
-			fertility = -0.1
+			health = -0.25
+			fertility = -0.25
+			if = {
+				limit = {
+					not = {
+						health = 0
+					}
+				}
+				death = { death_reason = death_execution killer = ROOT } 
+			}
 		}
+		character_event = { id = gnostic_cants_agonies.99999 }	
 	}
 }
 
@@ -262,12 +256,21 @@ character_event = {
 	is_triggered_only = yes
 
 	option = {
-	`	name = gnostic_cants_agonies.202a
-		gnostic_cants_agonies_target ={
+		name = gnostic_cants_agonies.202a
+		event_target:gnostic_cants_agonies_target ={
 			add_trait = maimed
-			health = -0.1
-			fertility = -0.1
+			health = -0.25
+			fertility = -0.25
+			if = {
+				limit = {
+					not = {
+						health = 0
+					}
+				}
+				death = { death_reason = death_execution killer = ROOT } 
+			}			
 		}
+		character_event = { id = gnostic_cants_agonies.99999 }
 	}
 }
 
@@ -280,12 +283,21 @@ character_event = {
 	is_triggered_only = yes
 
 	option = {
-	`	name = gnostic_cants_agonies.203a
-		gnostic_cants_agonies_target ={
+		name = gnostic_cants_agonies.203a
+		event_target:gnostic_cants_agonies_target ={
 			add_trait = infirm
-			health = -0.1
-			fertility = -0.1
+			health = -0.25
+			fertility = -0.25
+			if = {
+				limit = {
+					not = {
+						health = 0
+					}
+				}
+				death = { death_reason = death_execution killer = ROOT } 
+			}			
 		}
+		character_event = { id = gnostic_cants_agonies.99999 }	
 	}
 }
 
@@ -298,28 +310,319 @@ character_event = {
 
 	option = {
 		name = gnostic_cants_agonies.203a
-		gnostic_cants_agonies_target ={
-			add_trait = blinded
-			health = -0.1
-			fertility = -0.1
+		event_target:gnostic_cants_agonies_target ={
+			add_trait = blinded			
+			health = -0.25
+			fertility = -0.25
+			if = {
+				limit = {
+					not = {
+						health = 0
+					}
+				}
+				death = { death_reason = death_execution killer = ROOT } 
+			}			
 		}
+		character_event = { id = gnostic_cants_agonies.99999 }		
 	}
 }
 
 
 character_event = {
-	id = gnostic_cants_agonies.204
-	desc = gnostic_cants_agonies.204_desc
+	id = gnostic_cants_agonies.205
+	desc = gnostic_cants_agonies.205_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
 
 	option = {
-	`	name = gnostic_cants_agonies.204a
-		gnostic_cants_agonies_target ={
+		name = gnostic_cants_agonies.204a
+		event_target:gnostic_cants_agonies_target ={
 			add_trait = eunuch
-			health = -0.1
-			fertility = -0.1
+			health = -0.25
+			fertility = -0.25
+			if = {
+				limit = {
+					not = {
+						health = 0
+					}
+				}
+				death = { death_reason = death_execution killer = ROOT } 
+			}			
 		}
+		character_event = { id = gnostic_cants_agonies.99999 }	
 	}
+}
+
+
+
+
+
+
+character_event = {
+	id = gnostic_cants_agonies.3
+	desc = gnostic_cants_agonies.3_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = gnostic_cants_agonies.3a
+		trigger = {
+			event_target:gnostic_cants_agonies_target ={
+				not =  {
+					trait = possessed
+				}
+			}
+		}
+		character_event = { id = gnostic_cants_agonies.301 }
+		break = yes
+	}
+	option = {
+		name = gnostic_cants_agonies.3b
+		trigger = {
+			event_target:gnostic_cants_agonies_target ={
+				trait = possessed
+				not =  {
+					trait = lunatic 
+				}
+			}
+		}		
+		character_event = { id = gnostic_cants_agonies.302 }
+		
+	}
+	option = {
+		name = gnostic_cants_agonies.3c
+		trigger = {
+			event_target:gnostic_cants_agonies_target ={
+				trait = lunatuc
+				not =  {
+					trait = slow 
+				}
+			}
+		}
+		character_event = { id = gnostic_cants_agonies.303 }
+	}
+	option = {
+		name = gnostic_cants_agonies.3d
+		trigger = {
+			event_target:gnostic_cants_agonies_target ={
+				trait = slow
+				not =  {
+					trait = imbecile 
+				}
+			}
+		}
+		character_event = { id = gnostic_cants_agonies.304 }
+	}
+	option = {
+		name = gnostic_cants_agonies.3e
+		trigger = {
+			event_target:gnostic_cants_agonies_target ={
+				trait = imbecile
+				not =  {
+					trait = incapable 
+				}
+			}
+		}
+		character_event = { id = gnostic_cants_agonies.305 }
+	}	
+}
+
+character_event = {
+	id = gnostic_cants_agonies.301
+	desc = gnostic_cants_agonies.301_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+
+	option = {
+		name = gnostic_cants_agonies.301a
+		event_target:gnostic_cants_agonies_target ={
+			add_trait = possessed
+			health = -0.25
+			fertility = -0.25
+			if = {
+				limit = {
+					not = {
+						health = 0
+					}
+				}
+				death = { death_reason = death_execution killer = ROOT } 
+			}
+		}
+		character_event = { id = gnostic_cants_agonies.99999 }	
+	}
+}
+
+
+character_event = {
+	id = gnostic_cants_agonies.302
+	desc = gnostic_cants_agonies.302_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+
+	option = {
+		name = gnostic_cants_agonies.302a
+		event_target:gnostic_cants_agonies_target ={
+			add_trait = lunatic
+			health = -0.25
+			fertility = -0.25
+			if = {
+				limit = {
+					not = {
+						health = 0
+					}
+				}
+				death = { death_reason = death_execution killer = ROOT } 
+			}			
+		}
+		character_event = { id = gnostic_cants_agonies.99999 }
+	}
+}
+
+
+character_event = {
+	id = gnostic_cants_agonies.303
+	desc = gnostic_cants_agonies.303_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+
+	option = {
+		name = gnostic_cants_agonies.303a
+		event_target:gnostic_cants_agonies_target ={
+			add_trait = slow
+			health = -0.25
+			fertility = -0.25
+			if = {
+				limit = {
+					not = {
+						health = 0
+					}
+				}
+				death = { death_reason = death_execution killer = ROOT } 
+			}			
+		}
+		character_event = { id = gnostic_cants_agonies.99999 }	
+	}
+}
+
+character_event = {
+	id = gnostic_cants_agonies.304
+	desc = gnostic_cants_agonies.304_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+
+	option = {
+		name = gnostic_cants_agonies.303a
+		event_target:gnostic_cants_agonies_target ={
+			add_trait = imbecile			
+			health = -0.25
+			fertility = -0.25
+			if = {
+				limit = {
+					not = {
+						health = 0
+					}
+				}
+				death = { death_reason = death_execution killer = ROOT } 
+			}			
+		}
+		character_event = { id = gnostic_cants_agonies.99999 }		
+	}
+}
+
+
+character_event = {
+	id = gnostic_cants_agonies.304
+	desc = gnostic_cants_agonies.304_desc
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+
+	option = {
+		name = gnostic_cants_agonies.304a
+		event_target:gnostic_cants_agonies_target ={
+			add_trait = incapable
+			health = -0.25
+			fertility = -0.25
+			if = {
+				limit = {
+					not = {
+						health = 0
+					}
+				}
+				death = { death_reason = death_execution killer = ROOT } 
+			}			
+		}
+		character_event = { id = gnostic_cants_agonies.99999 }	
+	}
+}
+
+	
+character_event = {
+	id = gnostic_cants_agonies.9999
+	desc = gnostic_cants_agonies.9999_desc
+	picture = GFX_evt_mongols
+	is_triggered_only = yes	
+	immediate = {	
+		if = {
+			limit = { check_variable = { which = "spell_power" value = "var1"   } } 
+			subtract_variable  = { which = "spell_power" which  = "var1" }
+		}		
+	}
+	
+	option = {
+		name = gnostic_cants_agonies.9999a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1} event_target:gnostic_cants_agonies_target= {is_alive = yes } }
+		long_character_event = { id = gnostic_cants_agonies.1}	
+	}
+	option = {
+		name = gnostic_cants_agonies.9999b#No
+		event_target:high_magic_caster = {
+			character_event = { id = gnostic_cants_agonies.99997 }
+		}
+	}	
+}
+	
+
+	
+	
+
+character_event = {
+	id = gnostic_cants_agonies.99997#Natural Cooldown
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_variable = { which = "spell_power" value = 0}
+		if = {
+			limit = { trait = school_gnosis_1}
+			add_character_modifier = { modifier = school_gnosis_magic_cooldown days = 50 }
+			break = yes
+		}
+		if = {
+			limit = { trait = school_gnosis_2}
+			add_character_modifier = { modifier = school_gnosis_magic_cooldown days = 40 }
+			break = yes
+		}
+		if = {
+			limit = { trait = school_gnosis_3}
+			add_character_modifier = { modifier = school_gnosis_magic_cooldown days = 30 }
+			break = yes
+		}
+		if = {
+			limit = { trait = school_gnosis_4}
+			add_character_modifier = { modifier = school_gnosis_magic_cooldown days = 20 }
+			break = yes
+		}		
+		if = {
+			limit = { trait = school_gnosis_5}
+			add_character_modifier = { modifier = school_gnosis_magic_cooldown days = 10 }
+			break = yes
+		}		
+	}
+	
 }

@@ -1,5 +1,5 @@
 targetted_decisions = {
-	gnostic_cants_compulsion_decision = {
+	gnostic_cants_agonies_decision = {
 			
 		ai_target_filter   = realm
 		filter = all
@@ -11,7 +11,7 @@ targetted_decisions = {
 				trait = school_gnosis_2
 				trait = school_gnosis_3
 				trait = school_gnosis_4
-				trait = school_gnosis_5		
+				trait = school_gnosis_5
 			}
 				NOT = { has_character_modifier = school_gnosis_magic_cooldown }					
 		}
@@ -27,10 +27,10 @@ targetted_decisions = {
 		}
 		
 		effect = {	
-			save_event_target_as = gnostic_cants_compulsion_target	
+			save_event_target_as = gnostic_cants_agonies_target	
 
 			FROM = {
-				character_event = { id = gnostic_cants_compulsion.99990 }
+				character_event = { id = gnostic_cants_agonies.99990 }
 			}
 			
 		}
