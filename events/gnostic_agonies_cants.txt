@@ -517,7 +517,7 @@ character_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = gnostic_cants_agonies.303a
+		name = gnostic_cants_agonies.304a
 		event_target:gnostic_cants_agonies_target ={
 			add_trait = imbecile			
 			health = -0.25
@@ -537,14 +537,14 @@ character_event = {
 
 
 character_event = {
-	id = gnostic_cants_agonies.304
-	desc = gnostic_cants_agonies.304_desc
+	id = gnostic_cants_agonies.305
+	desc = gnostic_cants_agonies.305_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
 
 	option = {
-		name = gnostic_cants_agonies.304a
+		name = gnostic_cants_agonies.305a
 		event_target:gnostic_cants_agonies_target ={
 			add_trait = incapable
 			health = -0.25
@@ -564,8 +564,8 @@ character_event = {
 
 	
 character_event = {
-	id = gnostic_cants_agonies.9999
-	desc = gnostic_cants_agonies.9999_desc
+	id = gnostic_cants_agonies.99999
+	desc = gnostic_cants_agonies.99999_desc
 	picture = GFX_evt_mongols
 	is_triggered_only = yes	
 	immediate = {	
@@ -582,7 +582,7 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_agonies.9999b#No
-		event_target:high_magic_caster = {
+		event_target:gnostic_cants_agonies_caster = {
 			character_event = { id = gnostic_cants_agonies.99997 }
 		}
 	}	
