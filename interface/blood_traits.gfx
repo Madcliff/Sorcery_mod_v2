@@ -1,5 +1,13 @@
 spriteTypes = {
 	spriteType = {
+		name = "GFX_obj_study_blood_magic"
+		texturefile = "gfx/traits/blood_objective.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	
+	spriteType = {
 		name = "GFX_trait_speciality_blood_1"
 		texturefile = "gfx/traits/blood_tier1.tga"
 		noOfFrames = 1

@@ -1,4 +1,14 @@
 spriteTypes = {
+
+	spriteType = {
+		name = "GFX_obj_study_the_gnosis"
+		texturefile = "gfx/traits/agagonic_objective.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}		
+	
+
 	spriteType = {
 		name = "GFX_trait_school_gnosis_1"
 		texturefile = "gfx/traits/logic_tier1.tga"
