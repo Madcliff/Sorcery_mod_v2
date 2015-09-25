@@ -10,3 +10,8 @@ magic_drain = {
 magic_burning = {
 	icon = 54
 }
+
+
+magic_combat_mod = {
+ local_movement_speed = 0.4		
+}

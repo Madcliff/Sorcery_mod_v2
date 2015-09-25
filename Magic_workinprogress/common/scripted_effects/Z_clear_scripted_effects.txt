@@ -1,0 +1,36 @@
+
+clear_spell_effect = {
+	clr_character_flag = high_magic_drain_1 
+	clr_character_flag = high_magic_drain_2 
+	clr_character_flag = high_magic_drain_3 
+#	clr_character_flag = high_magic_drain_4 
+	clr_character_flag = high_magic_soul_quench_1 
+	clr_character_flag = high_magic_soul_quench_2 
+	clr_character_flag = high_magic_soul_quench_3 
+#	clr_character_flag = high_magic_soul_quench_4 
+	clr_character_flag = high_magic_apotheosis_1 
+	clr_character_flag = high_magic_apotheosis_2 
+	clr_character_flag = high_magic_apotheosis_3 
+#	clr_character_flag = high_magic_apotheosis_4 
+	clr_character_flag = high_magic_firey_convocation_1
+	clr_character_flag = high_magic_firey_convocation_2
+	clr_character_flag = high_magic_firey_convocation_3
+#	clr_character_flag = high_magic_firey_convocation_4
+
+	clr_character_flag = heavens_magic_chain_lightning_1 
+	clr_character_flag = heavens_magic_chain_lightning_2 
+	clr_character_flag = heavens_magic_chain_lightning_3 
+#	clr_character_flag = heavens_magic_chain_lightning_4 
+	clr_character_flag = heavens_magic_storm_of_the_ancients_1 
+	clr_character_flag = heavens_magic_storm_of_the_ancients_2 
+	clr_character_flag = heavens_magic_storm_of_the_ancients_3 
+#	clr_character_flag = heavens_magic_storm_of_the_ancients_4 
+	clr_character_flag = heavens_magic_harmonic_convergence_1 
+	clr_character_flag = heavens_magic_harmonic_convergence_2 
+	clr_character_flag = heavens_magic_harmonic_convergence_3 
+#	clr_character_flag = heavens_magic_harmonic_convergence_4 
+	clr_character_flag = heavens_magic_comet_of_cassondora_1
+	clr_character_flag = heavens_magic_comet_of_cassondora_2
+	clr_character_flag = heavens_magic_comet_of_cassondora_3
+#	clr_character_flag = heavens_magic_comet_of_cassondora_4
+}

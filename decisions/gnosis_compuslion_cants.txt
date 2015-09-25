@@ -1,7 +1,7 @@
 targetted_decisions = {
 	gnostic_cants_compulsion_decision = {
 			
-		ai_target_filter   = realm
+		ai_target_filter = realm
 		filter = all
 		from_potential = {
 			is_playable = yes

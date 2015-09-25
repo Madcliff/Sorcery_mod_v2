@@ -1,0 +1,134 @@
+namespace = magic_system
+
+
+character_event = {
+	id = magic_system.99997#Natural Cooldown
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { trait = magic_potential_1}
+			add_character_modifier = { modifier = magic_cooldown days = 60 }
+			clr_character_flag = high_magic 
+			clr_character_flag = heavens_magic
+			break = yes
+		}
+		if = {
+			limit = { trait = magic_potential_2}
+			add_character_modifier = { modifier = magic_cooldown days = 50 }
+			clr_character_flag = high_magic
+			clr_character_flag = heavens_magic
+			break = yes
+		}
+		if = {
+			limit = { trait = magic_potential_3}
+			add_character_modifier = { modifier = magic_cooldown days = 40 }
+			clr_character_flag = high_magic
+			clr_character_flag = heavens_magic
+			break = yes
+		}
+		if = {
+			limit = { trait = magic_potential_4}
+			add_character_modifier = { modifier = magic_cooldown days = 30 }
+			clr_character_flag = high_magic
+			clr_character_flag = heavens_magic
+			break = yes
+		}		
+	}
+	
+}
+
+
+character_event = {
+	id = magic_system.99998#Your Spell has Been Dispelled	" 
+	desc = magic_system.99998_desc#"Your magic has been stopped due to the power of your enemies mages. Cast another spell? "
+	is_triggered_only = yes
+	picture = GFX_evt_mage_lore_high_magic
+	option = {
+		name = magic_system.99998a#Yes
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+			if = {
+				limit = { has_character_flag = high_magic }
+				long_character_event = { id = high_magic_lore.1}
+			}
+			if = {
+				limit = { has_character_flag = heavens_magic }
+				long_character_event = { id = heavens_lore.1}
+			}			
+	}
+	option = {
+		name = magic_system.99998#No
+		character_event = {id = magic_system.99997}
+	}
+}
+
+character_event = {
+	id = magic_system.99991#Miscast	" 
+	desc = magic_system.99991_desc#Infamy, Infamy, The Gods Have it in for me! "
+	is_triggered_only = yes
+	picture = GFX_evt_mage_lore_high_magic
+	immediate = {
+		random_list = {
+		25 = {
+			if = {
+				limit = {
+					has_character_modifier = magic_power_1
+				}
+					change_learning = -1
+					character_event = {id = magic_system.99997}
+			}		
+			if = {
+				limit = {
+					has_character_modifier = magic_power_2
+				}
+					add_character_modifier = { modifier = magic_power_1 days = -1}
+					remove_character_modifier = magic_power_2
+					character_event = {id = magic_system.99997}
+			}
+			if = {
+				limit = {
+					has_character_modifier = magic_power_3
+				}
+					add_character_modifier = { modifier = magic_power_2 days = -1}
+					remove_character_modifier = magic_power_3
+					character_event = {id = magic_system.99997}
+			}
+			if = {
+				limit = {
+					has_character_modifier = magic_power_4
+				}
+					add_character_modifier = { modifier = magic_power_2 days = -1}
+					remove_character_modifier = magic_power_4
+					character_event = {id = magic_system.99997}
+			}			
+		}
+		25 = {
+			add_character_modifier = { modifier = magic_cooldown days = 300 }
+		}
+		5 = {
+			character_event = {id = mutation.1 }
+			character_event = {id = magic_system.99997}
+		}
+		5 = {
+			death = {
+				killer = root
+				death_reason = accident
+			}
+			character_event = {id = magic_system.99997}
+		}		
+		5 = { 
+			add_trait = incapable
+			character_event = {id = magic_system.99997}
+		}
+		35 = {
+			character_event = {id = magic_system.99997}
+		}
+	
+		}
+	
+	}
+	
+	option = {
+		name = magic_system.99991#No
+	}
+}

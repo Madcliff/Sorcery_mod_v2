@@ -1,0 +1,153 @@
+high_magic_lore_magic_phase;High Magic Magic Phase.;;;;;;;;;;;;x;
+high_magic_lore_magic_phase_desc;Begin [Root.GetBestName]'s High Magic battle phase.;;;;;;;;;;;;x;
+
+high_magic_lore.1;High Magic.;;;;;;;;;;;;x;
+high_magic_lore.1_desc;High Magic is quite simply magic in its purest form. Those who have mastered this most challenging of lores hold the entire spectrum of magic at their command. At a High Mage's word, shimmering fields of magical energy spring into being to protect his allies, and the fires of courage can blaze anew within their hearts. The truly gifted can even becalm the Winds of Magic themselves, collapsing a raging tempest until naught but a gentle breeze remains. With but a wave of his hand, a High Mage can call down the wrath of the heavens, paralyse his foes, or immolate whole regiments with Asuryan's Fire.;;;;;;;;;;;;x;
+high_magic_lore.1a;Cast Drain Magic.;;;;;;;;;;;;x;
+high_magic_lore.1b;Cast Soul Quench.;;;;;;;;;;;;x;
+high_magic_lore.1c;Cast Apotheosis.;;;;;;;;;;;;x;
+high_magic_lore.1d;Cast Firey Convocation.;;;;;;;;;;;;x;
+high_magic_lore.1a_desc;Drain Magic is the pinnacle of high magic, it prevents all magic than high magic from working in the province.;;;;;;;;;;;;x;
+high_magic_lore.1b_desc;Soul Quench is a deadly magic missile.;;;;;;;;;;;;x;
+high_magic_lore.1c_desc;Apotheosis is a powerful healing spell.;;;;;;;;;;;;x;
+high_magic_lore.1d_desc;Firey Convocation is a powerful damage over time spell.;;;;;;;;;;;;x;
+
+high_magic_lore.1000;Drain Magic.;;;;;;;;;;;;x;
+high_magic_lore.1000_desc;Drain Magic is the pinnacle of high magic, it prevents all magic than high magic from working in the province.;;;;;;;;;;;;x;
+high_magic_lore.1000a;Cast Drain Magic at power 1.;;;;;;;;;;;;x;
+high_magic_lore.1000b;Cast Drain Magic at power 2.;;;;;;;;;;;;x;
+high_magic_lore.1000c;Cast Drain Magic at power 3.;;;;;;;;;;;;x;
+
+high_magic_lore.1100;Drain Magic Power 1.;;;;;;;;;;;;x;
+high_magic_lore.1100_desc;Drain Magic will stop any magic but high magic for 10 days, and will put a random enemies spell casting on cooldown.;;;;;;;;;;;;x;
+high_magic_lore.1100a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.11111;Drain Magic Power 1.;;;;;;;;;;;;x;
+high_magic_lore.11111_desc;Your spell burns through the air, taking from all enemies the ability to cast.;;;;;;;;;;;;x;
+high_magic_lore.11111a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.11111b;No.;;;;;;;;;;;;x;
+
+high_magic_lore.1200;Drain Magic Power 2.;;;;;;;;;;;;x;
+high_magic_lore.1200_desc;Drain Magic will stop any magic but high magic for 10 days, and will put three random enemies spell casting on cooldown.;;;;;;;;;;;;x;
+high_magic_lore.1200a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.11112;Drain Magic Power 2.;;;;;;;;;;;;x;
+high_magic_lore.11112_desc;Your spell burns through the air, taking from all enemies the ability to cast.;;;;;;;;;;;;x;
+high_magic_lore.11112a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.11112b;No.;;;;;;;;;;;;x;
+
+high_magic_lore.1300;Drain Magic Power 3.;;;;;;;;;;;;x;
+high_magic_lore.1300_desc;Drain Magic will stop any magic but high magic for 10 days, and will put all enemies spell casting on cooldown.;;;;;;;;;;;;x;
+high_magic_lore.1300a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.11113;Drain Magic Power 3.;;;;;;;;;;;;x;
+high_magic_lore.11113_desc;Your spell burns through the air, taking from all enemies the ability to cast.;;;;;;;;;;;;x;
+high_magic_lore.11113a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.11113b;No.;;;;;;;;;;;;x;
+
+
+high_magic_lore.2000;Soul Quench.;;;;;;;;;;;;x;
+high_magic_lore.2000_desc;Cast your powers and strike down your enemies with the fires that burn the very soul.;;;;;;;;;;;;x;
+high_magic_lore.2000a;Cast Soul Quench at power 1.;;;;;;;;;;;;x;
+high_magic_lore.2000b;Cast Soul Quench at power 2.;;;;;;;;;;;;x;
+high_magic_lore.2000c;Cast Soul Quench at power 3.;;;;;;;;;;;;x;
+
+high_magic_lore.2100;Soul Quench 1.;;;;;;;;;;;;x;
+high_magic_lore.2100_desc;Soul Quench will kill 5% of any enemy army ;;;;;;;;;;;;x;
+high_magic_lore.2100a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.21111;Soul Quench Power 1.;;;;;;;;;;;;x;
+high_magic_lore.21111_desc;Your spell burns through the air, striking dead your enemies.;;;;;;;;;;;;x;
+high_magic_lore.21111a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.21111b;No.;;;;;;;;;;;;x;
+
+high_magic_lore.2200;Soul Quench 2.;;;;;;;;;;;;x;
+high_magic_lore.2200_desc;Soul Quench will kill 15% of any enemy armies.;;;;;;;;;;;;x;
+high_magic_lore.2200a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.2210;Dispel Soul Quench 2.;;;;;;;;;;;;x;
+high_magic_lore.2210_desc;Your nefarious foe has unleashed their evil magics upon you, do you wish to attempt to dispel their magic?.;;;;;;;;;;;;x;
+high_magic_lore.2210a;Yes.;;;;;;;;;;;;x;
+high_magic_lore.2210b;No.;;;;;;;;;;;;x;
+high_magic_lore.2220;Magic Duel.;;;;;;;;;;;;x;
+high_magic_lore.2220_desc;Curses, [event_target:high_magic_dispeler.GetBestName] has attempted to stop your spell!.;;;;;;;;;;;;x;
+high_magic_lore.2220a;Yes.;;;;;;;;;;;;x;
+high_magic_lore.2220b;No.;;;;;;;;;;;;x;
+high_magic_lore.2221;Magic Duel.;;;;;;;;;;;;x;
+high_magic_lore.2221_desc;Curses, Your enemy, the evil [event_target:high_magic_caster.GetBestName] has engaged you in a deeper contest of power.;;;;;;;;;;;;x;
+high_magic_lore.2221a;Yes.;;;;;;;;;;;;x;
+high_magic_lore.2221b;No.;;;;;;;;;;;;x;
+high_magic_lore.2222;Magic Duel.;;;;;;;;;;;;x;
+high_magic_lore.2222_desc;The battle of minds continues, surely [event_target:high_magic_dispeler.GetBestName] must be growing weak by now, do you wish to continue the battle.;;;;;;;;;;;;x;
+high_magic_lore.2222a;Yes.;;;;;;;;;;;;x;
+high_magic_lore.2222b;No.;;;;;;;;;;;;x;
+high_magic_lore.21112;Soul Quench 2.;;;;;;;;;;;;x;
+high_magic_lore.21112_desc;Your spell burns through the air, striking dead your enemies.;;;;;;;;;;;;x;
+high_magic_lore.21112a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.21112b;No.;;;;;;;;;;;;x;
+
+high_magic_lore.2300;Soul Quench 3.;;;;;;;;;;;;x;
+high_magic_lore.2300_desc;Soul Quench will kill 40% of any enemy armies.;;;;;;;;;;;;x;
+high_magic_lore.2300a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.21113;Soul Quench 3.;;;;;;;;;;;;x;
+high_magic_lore.21113_desc;Your spell burns through the air, striking dead your enemies.;;;;;;;;;;;;x;
+high_magic_lore.21113a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.21113b;No.;;;;;;;;;;;;x;
+
+
+high_magic_lore.3000;Apotheosis.;;;;;;;;;;;;x;
+high_magic_lore.3000_desc;With words of power knit anew wrent flesh, and restore hope and vigour.;;;;;;;;;;;;x;
+high_magic_lore.3000a;Cast Apotheosis at power 1.;;;;;;;;;;;;x;
+high_magic_lore.3000b;Cast Apotheosis at power 2.;;;;;;;;;;;;x;
+high_magic_lore.3000c;Cast Apotheosis at power 3.;;;;;;;;;;;;x;
+
+high_magic_lore.3100;Apotheosis 1.;;;;;;;;;;;;x;
+high_magic_lore.3100_desc;Apotheosis will kill 5% of a random army of yours at your location.;;;;;;;;;;;;x;
+high_magic_lore.3100a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.31111;Apotheosis Power 1.;;;;;;;;;;;;x;
+high_magic_lore.31111_desc;Your spell makes the air water as the dead and the hopeless find themselves restored.;;;;;;;;;;;;x;
+high_magic_lore.31111a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.31111b;No.;;;;;;;;;;;;x;
+
+high_magic_lore.3200;Apotheosis 2.;;;;;;;;;;;;x;
+high_magic_lore.3200_desc;Apotheosis will restore 10% of all armies at your location.;;;;;;;;;;;;x;
+high_magic_lore.3200a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.31112;Apotheosis 2.;;;;;;;;;;;;x;
+high_magic_lore.31112_desc;Your spell makes the air water as the dead and the hopeless find themselves restored.;;;;;;;;;;;;x;
+high_magic_lore.31112a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.31112b;No.;;;;;;;;;;;;x;
+
+high_magic_lore.3300;Apotheosis 3.;;;;;;;;;;;;x;
+high_magic_lore.3300_desc;Apotheosis will restore 30% of all your armies at your location.;;;;;;;;;;;;x;
+high_magic_lore.3300a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.31113;Apotheosis 3.;;;;;;;;;;;;x;
+high_magic_lore.31113_desc;Your spell makes the air water as the dead and the hopeless find themselves restored.;;;;;;;;;;;;x;
+high_magic_lore.31113a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.31113b;No.;;;;;;;;;;;;x;
+
+high_magic_lore.4000;Firey Convocation.;;;;;;;;;;;;x;
+high_magic_lore.4000_desc;Cast your powers and strike down your enemies with the fires that burn the very soul.;;;;;;;;;;;;x;
+high_magic_lore.4000a;Cast Firey Convocation at power 1.;;;;;;;;;;;;x;
+high_magic_lore.4000b;Cast Firey Convocation at power 2.;;;;;;;;;;;;x;
+high_magic_lore.4000c;Cast Firey Convocation at power 3.;;;;;;;;;;;;x;
+
+high_magic_lore.4100;Firey Convocation 1.;;;;;;;;;;;;x;
+high_magic_lore.4100_desc;Firey Convocation will 1% of all enemy armies each day for 10 days.;;;;;;;;;;;;x;
+high_magic_lore.4100a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.41111;Firey Convocation Power 1.;;;;;;;;;;;;x;
+high_magic_lore.41111_desc;The fires of mighty Asuryan himself scorch the earth, turning body and soul of all they touch to nothing but ash.;;;;;;;;;;;;x;
+high_magic_lore.41111a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.41111b;No.;;;;;;;;;;;;x;
+
+high_magic_lore.4200;Firey Convocation 2.;;;;;;;;;;;;x;
+high_magic_lore.4200_desc;Firey Convocation will 3% of all enemy armies each day for 10 days.;;;;;;;;;;;;x;
+high_magic_lore.4200a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.41112;Firey Convocation 2.;;;;;;;;;;;;x;
+high_magic_lore.41112_desc;The fires of mighty Asuryan himself scorch the earth, turning body and soul of all they touch to nothing but ash.;;;;;;;;;;;;x;
+high_magic_lore.41112a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.41112b;No.;;;;;;;;;;;;x;
+
+high_magic_lore.4300;Firey Convocation 3.;;;;;;;;;;;;x;
+high_magic_lore.4300_desc;Firey Convocation will 7% of all enemy armies each day for 10 days.;;;;;;;;;;;;x;
+high_magic_lore.4300a;Magic is Might!.;;;;;;;;;;;;x;
+high_magic_lore.41113;Firey Convocation 3.;;;;;;;;;;;;x;
+high_magic_lore.41113_desc;The fires of mighty Asuryan himself scorch the earth, turning body and soul of all they touch to nothing but ash.;;;;;;;;;;;;x;
+high_magic_lore.41113a;Cast Another Spell.;;;;;;;;;;;;x;
+high_magic_lore.41113b;No.;;;;;;;;;;;;x;
+
+

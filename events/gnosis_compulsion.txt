@@ -1836,9 +1836,7 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.9999b#No
-		event_target:high_magic_caster = {
-			character_event = { id = gnostic_cants_compulsion.99997 }
-		}
+		character_event = { id = gnostic_cants_compulsion.99997}
 	}	
 }
 	

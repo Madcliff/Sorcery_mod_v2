@@ -1,0 +1,36 @@
+#magic_cooldown = {
+#icon = 54
+#}
+
+magic_drain = {
+	icon = 54
+}
+
+magic_burning = {
+	icon = 54
+}
+
+magic_lore_heavens_tactics = {
+	icon = 54
+}
+
+magic_lore_heavens_foresight_tactics_1 = {
+	icon = 54
+}
+
+magic_lore_heavens_foresight_tactics_2 = {
+	icon = 54
+}
+magic_lore_heavens_foresight_tactics_3 = {
+	icon = 54
+}
+
+stormofheavensmain = {
+	icon = 54
+	local_movement_speed = -0.15
+}
+
+stormofheavensecond = {
+	icon = 54
+	local_movement_speed = -0.15
+}

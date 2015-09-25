@@ -1,0 +1,359 @@
+namespace = dispell 
+character_event = {
+	id = dispell.1#"Dispel High Magic; Drain Magic" 
+	desc = dispell.1_desc#"Your nefarious foe has unleashed their evil magics upon you, do you wish to attempt to dispel their magic? Note dispelling will prevent this mage from casting spells."
+	is_triggered_only = yes
+	picture = GFX_evt_mage_lore_high_magic
+	
+	option = {
+		name = dispell.1a#Yes
+			trigger = {check_variable = {which = "spell_power" value = 1}}
+			change_variable = {which = "spell_power" value = -1}
+			random_list = { 
+				25 = { 
+					event_target:magic_caster = {
+						character_event = {id = dispell.9999}							
+					} 
+				}
+				50 = {
+					event_target:magic_caster = { 
+						character_event = {id = dispell.1}	
+					}
+				}
+				25 = {
+					modifier = {
+						factor = 1.25
+						trait = magic_potential_1
+					}
+					modifier = {
+						factor = 1.5
+						trait = magic_potential_2
+					}
+					modifier = {
+						factor = 1.75
+						trait = magic_potential_3
+					}
+					modifier = {
+						factor = 2
+						trait = magic_potential_4
+					}				
+					event_target:magic_caster = {
+						character_event = { id = magic_system.99998}
+					}
+				}
+			}	
+			ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				check_variable = {which = "spell_power" value = 1}
+			}
+			modifier = {
+				factor = 1
+				trait = wroth
+			}			
+		}			
+	}
+	option = {
+		name = dispell.1b#No
+		event_target:magic_caster = {
+			character_event = {id = dispell.9999}
+		}
+	}
+}
+
+character_event = {
+	id = dispell.2#"Curses, [dispeller] has attempted to stop your spell!" 
+	desc = dispell.2_desc#"A courageous mage has attempted to prevent your spell from taking hold, do you wish to invest more power? "
+	is_triggered_only = yes
+	picture = GFX_evt_mage_lore_high_magic
+
+	option = {
+		name = dispell.2a#Yes
+			trigger = {check_variable = {which = "spell_power" value = 1}}
+			change_variable = {which = "spell_power" value = -1}
+			random_list = { 
+				25 = { 
+					modifier = {
+						factor = 1.25
+						trait = magic_potential_1
+					}
+					modifier = {
+						factor = 1.5
+						trait = magic_potential_2
+					}
+					modifier = {
+						factor = 1.75
+						trait = magic_potential_3
+					}
+					modifier = {
+						factor = 2
+						trait = magic_potential_4
+					}
+					event_target:magic_caster = {
+						character_event = {id = dispell.9999}					
+					} 
+				}
+				50 = {
+					event_target:magic_dispeler = { 
+						character_event = {id = dispell.3}	
+					}
+				}
+				25 = {					
+					event_target:magic_caster = {
+						character_event = { id = magic_system.99998}
+					}
+				}
+			}			
+
+	}
+	option = {
+		name = dispell.2b#No
+			character_event = { id = magic_system.99998}
+	}
+}
+
+character_event = {
+	id = dispell.3#A duel has begun" 
+	desc = dispell.3_desc#"Your enemy, the evil [spellcaster] has engaged in a deeper contest of arcane power, do you have the stumach to let the magic keep burning?"
+	is_triggered_only = yes
+	picture = GFX_evt_mage_lore_high_magic
+	
+	option = {
+		name = dispell.3a#Yes
+			trigger = {check_variable = {which = "spell_power" value = 1}}
+			change_variable = {which = "spell_power" value = -1}
+			random_list = { 
+				25 = { 
+					event_target:magic_caster = {
+						character_event = {id = dispell.9999}					
+					} 
+				}
+				50 = {
+					event_target:magic_caster = { 
+						character_event = {id = dispell.4}	
+					}
+				}
+				25 = {
+					modifier = {
+						factor = 1.25
+						trait = magic_potential_1
+					}
+					modifier = {
+						factor = 1.5
+						trait = magic_potential_2
+					}
+					modifier = {
+						factor = 1.75
+						trait = magic_potential_3
+					}
+					modifier = {
+						factor = 2
+						trait = magic_potential_4
+					}				
+					event_target:magic_caster = {
+						character_event = { id = magic_system.99998}
+					}
+				}
+			}
+	}
+	
+	option = {
+		name = dispell.3b#No
+		character_event = { id = magic_system.99997 }		
+		event_target:magic_caster = {
+			character_event = {id = dispell.9999}
+		}
+
+	}
+}
+
+character_event = {
+	id = dispell.4#A duel has begun" 
+	desc = dispell.4_desc#"The battle of minds continues, surely [dispeller] must be growing weak by now, do you wish to continue the battle?"
+	is_triggered_only = yes
+	picture = GFX_evt_mage_lore_high_magic
+	option = {
+		name = dispell.4a#Yes
+			trigger = {check_variable = {which = "spell_power" value = 1}}
+			change_variable = {which = "spell_power" value = -1}
+			random_list = { 
+				25 = { 
+					modifier = {
+						factor = 1.25
+						trait = magic_potential_1
+					}
+					modifier = {
+						factor = 1.5
+						trait = magic_potential_2
+					}
+					modifier = {
+						factor = 1.75
+						trait = magic_potential_3
+					}
+					modifier = {
+						factor = 2
+						trait = magic_potential_4
+					}
+					event_target:magic_caster = {
+						character_event = {id = dispell.9999}					
+					} 
+				}
+				50 = {
+					event_target:magic_dispeler = { 
+						character_event = {id = dispell.3}	
+					}
+				}
+				25 = {					
+					event_target:magic_caster = {
+						character_event = { id = magic_system.99998}
+					}
+				}
+			}
+	}
+	option = {
+		name = dispell.4b#No
+			character_event = { id = magic_system.99998}
+	}
+}
+character_event = {
+	id = dispell.9999#A duel has begun" 
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		if = { 
+			limit = { has_character_flag = high_magic_drain_1 } 
+			character_event = { id = high_magic_lore.11111 }
+		}
+		if = { 
+			limit = { has_character_flag = high_magic_drain_2 } 
+			character_event = { id = high_magic_lore.11112 }
+		}
+		if = { 
+			limit = { has_character_flag = high_magic_drain_3 } 
+			character_event = { id = high_magic_lore.11113 }
+		}
+#		if = { 
+#			limit = { has_character_flag = high_magic_drain_4 } 
+#			character_event = { id = high_magic_lore.11114 }
+#		}
+		if = { 
+			limit = { has_character_flag = high_magic_soul_quench_1 } 
+			character_event = { id = high_magic_lore.21111 }
+		}
+		if = { 
+			limit = { has_character_flag = high_magic_soul_quench_2 } 
+			character_event = { id = high_magic_lore.21112 }
+		}
+		if = { 
+			limit = { has_character_flag = high_magic_soul_quench_3 } 
+			character_event = { id = high_magic_lore.21113 }
+		}
+#		if = { 
+#			limit = { has_character_flag = high_magic_soul_quench_4 } 
+#			character_event = { id = high_magic_lore.21114 }
+#		}
+		if = { 
+			limit = { has_character_flag = high_magic_apotheosis_1 } 
+			character_event = { id = high_magic_lore.31111 }
+		}
+		if = { 
+			limit = { has_character_flag = high_magic_apotheosis_2 } 
+			character_event = { id = high_magic_lore.31112 }
+		}
+		if = { 
+			limit = { has_character_flag = high_magic_apotheosis_3 } 
+			character_event = { id = high_magic_lore.31113 }
+		}
+#		if = { 
+#			limit = { has_character_flag = high_magic_apotheosis_4 } 
+#			character_event = { id = high_magic_lore.31114 }
+#		}
+		if = { 
+			limit = { has_character_flag = high_magic_firey_convocation_1 } 
+			character_event = { id = high_magic_lore.41111 }
+		}
+		if = { 
+			limit = { has_character_flag = high_magic_firey_convocation_2 } 
+			character_event = { id = high_magic_lore.41112 }
+		}
+		if = { 
+			limit = { has_character_flag = high_magic_firey_convocation_3 } 
+			character_event = { id = high_magic_lore.41113 }
+		}
+#		if = { 
+#			limit = { has_character_flag = high_magic_firey_convocation_4 } 
+#			character_event = { id = high_magic_lore.41114 }
+#		}
+
+
+		#Lore of the Heavens
+		
+		if = { 
+			limit = { has_character_flag = heavens_magic_chain_lightning_1 } 
+			character_event = { id = heavens_lore.11111 }
+		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_chain_lightning_2 } 
+			character_event = { id = heavens_lore.11112 }
+		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_chain_lightning_3 } 
+			character_event = { id = heavens_lore.11113 }
+		}
+#		if = { 
+#			limit = { has_character_flag = heavens_magic_chain_lightning_4 } 
+#			character_event = { id = heavens_lore.11114 }
+#		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_harmonic_convergence_1 } 
+			character_event = { id = heavens_lore.21111 }
+		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_harmonic_convergence_2 } 
+			character_event = { id = heavens_lore.21112 }
+		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_harmonic_convergence_3 } 
+			character_event = { id = heavens_lore.21113 }
+		}
+#		if = { 
+#			limit = { has_character_flag = heavens_magic_harmonic_convergence_4 } 
+#			character_event = { id = heavens_lore.21114 }
+#		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_storm_of_the_ancients_1 } 
+			character_event = { id = heavens_lore.31111 }
+		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_storm_of_the_ancients_2 } 
+			character_event = { id = heavens_lore.31112 }
+		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_storm_of_the_ancients_3 } 
+			character_event = { id = heavens_lore.31113 }
+		}
+#		if = { 
+#			limit = { has_character_flag = heavens_magic_storm_of_the_ancients_4 } 
+#			character_event = { id = heavens_lore.31114 }
+#		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_comet_of_cassondora_1 } 
+			character_event = { id = heavens_lore.41111 }
+		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_comet_of_cassondora_2 } 
+			character_event = { id = heavens_lore.41112 }
+		}
+		if = { 
+			limit = { has_character_flag = heavens_magic_comet_of_cassondora_3 } 
+			character_event = { id = heavens_lore.41113 }
+		}
+#		if = { 
+#			limit = { has_character_flag = heavens_magic_comet_of_cassondora_4 } 
+#			character_event = { id = heavens_lore.41114 }
+#		}		
+
+	}
+}

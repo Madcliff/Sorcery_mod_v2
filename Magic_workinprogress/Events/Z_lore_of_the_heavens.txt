@@ -1,0 +1,1849 @@
+namespace = heavens_lore
+
+character_event = {
+	id = heavens_lore.99990
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		save_event_target_as = magic_caster
+		set_character_flag = heavens_magic
+		if = {
+			limit = {
+				has_character_modifier = magic_power_1
+			}
+			set_variable = { which = "spell_power" value = 1}
+		}
+		if = {
+			limit = {
+				has_character_modifier =  magic_power_2
+			}
+			set_variable = { which = "spell_power" value = 1}
+		}
+		if = {
+			limit = {
+			has_character_modifier = magic_power_3
+			}
+			set_variable = { which = "spell_power" value = 3}
+		}
+		if = {
+			limit = {
+			has_character_modifier = magic_power_4
+			}
+		set_variable = { which = "spell_power" value = 4}
+		}
+		any_current_enemy = {
+			random_realm_character = {
+				limit = {
+					in_command = yes				
+					at_location = ROOT 
+					or = {
+						has_character_modifier = magic_power_1	
+						has_character_modifier = magic_power_2	
+						has_character_modifier = magic_power_3	
+						has_character_modifier = magic_power_4									
+					}	
+					NOT = { has_character_modifier =  magic_cooldown }
+				}
+				save_event_target_as = magic_dispeler
+				if = {
+					limit = {
+						has_character_modifier =  magic_power_1
+					}
+					set_variable = { which = "spell_power" value = 1}
+				}
+				if = {
+					limit = {
+						has_character_modifier =  magic_power_2
+					}
+					set_variable = { which = "spell_power" value = 2}
+				}
+				if = {
+					limit = {
+						has_character_modifier = magic_power_3
+					}
+					set_variable = { which = "spell_power" value = 3}
+				}
+				if = {
+					limit = {
+						has_character_modifier = magic_power_4
+					}
+					set_variable = { which = "spell_power" value = 4}
+				}	
+			}
+		}
+		long_character_event = { id = heavens_lore.1}
+	}
+}
+
+long_character_event = {
+	id = heavens_lore.1#"High Magic" 
+	desc = heavens_lore.1_desc#"High Magic, the true magic. "
+	is_triggered_only = yes
+	
+	picture = FX_evt_mage_lore_high_magic
+	
+
+
+	option = {
+	trigger = {check_variable = { which = "spell_power" value = 1}}
+		name = heavens_lore.1a#"Lore of the Heavens, Chain Lightning"
+		character_event = {id = heavens_lore.1000}
+	}
+	option = {
+	trigger = {check_variable = { which = "spell_power" value = 1} NOT = { OR = {has_character_modifier = magic_lore_heavens_foresight_tactics_1 has_character_modifier = magic_lore_heavens_foresight_tactics_2 has_character_modifier = magic_lore_heavens_foresight_tactics_3 }}}	
+		name = heavens_lore.1b#"Lore of the Heavens, Harmonic Convergence"
+		character_event = {id = heavens_lore.2000}
+	}
+	option = {
+	trigger = {check_variable = { which = "spell_power" value = 3}}	
+		name = heavens_lore.1c#"Lore of the Heavens, Storm of the Ancients,"
+		character_event = {id = heavens_lore.3000}
+	}
+	option = {
+	trigger = {check_variable = { which = "spell_power" value = 4}}	
+		name = heavens_lore.1d#"Lore of the Heavens, Comet of Cassondora "
+		character_event = {id = heavens_lore.4000}
+	}	
+}
+
+
+#Drain Magic
+
+
+character_event = {
+	id = heavens_lore.1000#"" 
+	desc = heavens_lore.1000_desc#"You prepare your powers and strike out with your arcane arts, ripping the very essence of enchantment away from your enemies. Select the strength you wish to cast with, tier 1 will stop a random enemy spellcaster. tier 2 will affect three enemy spell casters. Tier three will affect all enemy spell casters. "
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 1}}
+		name = heavens_lore.1000a#"High Magic; Drain Magic Power 1"
+		character_event = {id = heavens_lore.1100}
+		set_character_flag = heavens_magic_chain_lightning_1
+	}
+	
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 2}}
+		name = heavens_lore.1000b#"High Magic; Drain Magic Power 2"
+		character_event = {id = heavens_lore.1200}
+		set_character_flag = heavens_magic_chain_lightning_2		
+	}
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 3}}
+		name = heavens_lore.1000c#"High Magic; Drain Magic Power 3"
+		character_event = {id = heavens_lore.1300}
+		set_character_flag = heavens_magic_chain_lightning_3		
+	}
+}
+
+character_event = {
+	id = heavens_lore.1100#"High Magic; Drain Magic" 
+	desc = heavens_lore.1100_desc#"You channel the arcane powers and lash out blindly towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	
+	immediate = {
+		change_variable = {which = "spell_power" value = -1}
+		set_variable = { which = miscast_power value = 1 }
+		random_list = {
+			90 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}			
+			}
+			10 = {  
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.1100a#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+			character_event = {id = heavens_lore.11111}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+
+character_event = {
+	id = heavens_lore.11111#Drain Magic Power 1" 
+	desc = heavens_lore.11111_desc#"Your spell burns through the air, taking from all enemies the ability to cast. "
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		clear_spell_effect = yes
+		location = {
+			save_event_target_as = lightningloc
+		}
+		character_event = { id = heavens_lore.11114}	
+	}
+	
+	option = {
+		name = heavens_lore.11111a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.1121b#No
+		event_target:magic_caster = {
+			character_event = { id = magic_system.99997 }
+		}
+	}
+}
+
+	 
+character_event = {
+	id = heavens_lore.11114#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		any_current_enemy = {
+			limit = {	
+				any_army = {
+					location = event_target:lightningloc
+				}
+			}
+			morale = -0.01
+			troops = -0.01
+			random = {
+				chance = 10
+				leader = {
+					death = yes
+				}
+			}
+		}
+		random = {
+			chance = 25
+			character_event = { id = heavens_lore.11114}
+		}		
+	}
+} 
+
+
+
+character_event = {
+	id = heavens_lore.1200#"High Magic; Drain Magic" 
+	desc = heavens_lore.1200_desc#"You channel the arcane powers and lash out blindly towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		change_variable = {which = "spell_power" value = -2}
+		set_variable = { which = miscast_power value = 2 }
+		random_list = {
+			75 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}			
+			}
+			25 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.1200#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+			character_event = {id = heavens_lore.11112}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+character_event = {
+	id = heavens_lore.11112#Drain Magic Power 1" 
+	desc = heavens_lore.11112_desc#"Your spell burns through the air, taking from all enemies the ability to cast. "
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		clear_spell_effect = yes
+		location = {
+			save_event_target_as = lightningloc
+		}
+		character_event = { id = heavens_lore.11115}	
+	}
+	
+	option = {
+		name = heavens_lore.11112a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.11112b#No
+		event_target:magic_caster = {
+			character_event = { id = magic_system.99997 }
+		}
+	}
+}
+
+	 
+character_event = {
+	id = heavens_lore.11115#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		any_current_enemy = {
+			limit = {	
+				any_army = {
+					location = event_target:lightningloc
+				}
+			}
+			morale = -0.03
+			troops = -0.03
+			random = {
+				chance = 10
+				leader = {
+					death = yes
+				}
+			}
+		}
+		random = {
+			chance = 35
+			character_event = { id = heavens_lore.11115}
+		}		
+	}
+}
+
+
+
+
+character_event = {
+	id = heavens_lore.1300#"High Magic; Drain Magic" 
+	desc = heavens_lore.1300_desc#"You channel the arcane powers and lash out blindly towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		change_variable = {which = "spell_power" value = -3}
+		set_variable = { which = miscast_power value = 3 }
+		random_list = {
+			60 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}
+			}
+			40 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.1300#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+			character_event = {id = heavens_lore.11113}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+character_event = {
+	id = heavens_lore.11113#Drain Magic Power 1" 
+	desc = heavens_lore.11113_desc#"Your spell burns through the air, taking from all enemies the ability to cast. "
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		clear_spell_effect = yes
+		location = {
+			save_event_target_as = lightningloc
+		}
+		character_event = { id = heavens_lore.11116}	
+	}
+	
+	option = {
+		name = heavens_lore.11113a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.11113b#No
+		event_target:magic_caster = {
+			character_event = { id = magic_system.99997 }
+		}
+	}
+}
+
+	 
+character_event = {
+	id = heavens_lore.11116#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		any_current_enemy = {
+			limit = {	
+				any_army = {
+					location = event_target:lightningloc
+				}
+			}
+			morale = -0.07
+			troops = -0.07
+			random = {
+				chance = 10
+				leader = {
+					death = yes
+				}
+			}
+		}
+		random = {
+			chance = 40
+			character_event = { id = heavens_lore.11116}
+		}		
+	}
+}
+
+
+
+#soul quench
+
+
+character_event = {
+	id = heavens_lore.2000#"High Magic; Soul Quench" 
+	desc = heavens_lore.2000_desc#"Cast your powers and strike down your enemies with the fires that burn the very soul!"
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 1}}
+		name = heavens_lore.2000a#"High Magic; Soul Quench 1"
+		character_event = {id = heavens_lore.2100}
+		set_character_flag = heavens_magic_harmonic_convergence_1
+	}
+	
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 2}}
+		name = heavens_lore.2000b#"High Magic; Soul Quench Power 2"
+		character_event = {id = heavens_lore.2200}
+		set_character_flag = heavens_magic_harmonic_convergence_2
+	}
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 3}}
+		name = heavens_lore.2000c#"High Magic; Soul Quench Power 3"
+		character_event = {id = heavens_lore.2300}
+		set_character_flag = heavens_magic_harmonic_convergence_3		
+	}
+}
+
+character_event = {
+	id = heavens_lore.2100#"High Magic; Soul Quench" 
+	desc = heavens_lore.2100_desc#"You channel the arcane powers and lash out towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		change_variable = {which = "spell_power" value = -1}
+		set_variable = { which = miscast_power value = 1 }
+		random_list = {
+			90 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}
+			}
+			10 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.2100a#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+			character_event = {id = heavens_lore.21111}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+character_event = {
+	id = heavens_lore.21111#Soul Quench 1" 
+	desc = heavens_lore.21111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		clear_spell_effect = yes
+		add_character_modifier = { modifier = magic_lore_heavens_foresight_tactics_1  days = 30 }	
+	}
+	
+	option = {
+		name = heavens_lore.21111a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.21111b#No
+		character_event = {id = magic_system.99997}
+	}
+}
+
+
+
+
+
+character_event = {
+	id = heavens_lore.2200#"High Magic; Drain Magic" 
+	desc = heavens_lore.2200_desc#"You channel the arcane powers and lash out blindly towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		change_variable = {which = "spell_power" value = -2}
+		set_variable = { which = miscast_power value = 2 }
+		random_list = {
+			75 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}    				
+			}
+			25 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.2200a#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+			character_event = {id = heavens_lore.21112}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+
+character_event = {
+	id = heavens_lore.21112#Soul Quench 2" 
+	desc = heavens_lore.11112_desc#"Your spell burns through the air, strike dead scores of men. "
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		clear_spell_effect = yes
+		add_character_modifier = { modifier = magic_lore_heavens_foresight_tactics_2  days = 45 }	
+	}
+	
+	option = {
+		name = heavens_lore.21112a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.21112b#No
+		character_event = {id = magic_system.99997}
+	}
+}
+
+
+
+
+character_event = {
+	id = heavens_lore.2300#"High Magic; Soul Quench 3" 
+	desc = heavens_lore.2300_desc#"You channel the arcane powers and lash out blindly towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		change_variable = {which = "spell_power" value = -3}
+		set_variable = { which = miscast_power value = 3 }
+		random_list = {
+			60 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}    				
+			}
+			40 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.2300a#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+			character_event = {id = heavens_lore.21113}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+character_event = {
+	id = heavens_lore.21113#Drain Magic Power 1" 
+	desc = heavens_lore.21113_desc#"Your spell burns through the air, taking from all enemies the ability to cast. "
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		clear_spell_effect = yes
+		add_character_modifier = { modifier = magic_lore_heavens_foresight_tactics_3  days = 90 }	
+	}
+	
+	option = {
+		name = heavens_lore.21113a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.21113b#No
+		event_target:magic_caster = {
+			character_event = { id = magic_system.99997 }
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+character_event = {
+	id = heavens_lore.3000#"High Magic; Apotheosis" 
+	desc = heavens_lore.3000_desc	# You prepare your magic to restore the fallen
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 3}}
+		name = heavens_lore.3000a#"High Magic; Drain Magic Power 1"
+		character_event = {id = heavens_lore.3100}
+		set_character_flag = heavens_magic_storm_of_the_ancients_1
+	}
+	
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 4}}
+		name = heavens_lore.3000b#"High Magic; Drain Magic Power 2"
+		character_event = {id = heavens_lore.3200}
+		set_character_flag = heavens_magic_storm_of_the_ancients_2
+	}
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 5}}
+		name = heavens_lore.3000c#"High Magic; Drain Magic Power 3"
+		character_event = {id = heavens_lore.3300}
+		set_character_flag = heavens_magic_storm_of_the_ancients_3
+	}
+}
+
+character_event = {
+	id = heavens_lore.3100#"High Magic; Apotheosis" 
+	desc = heavens_lore.3100_desc#"You channel the arcane powers and let it flow to your dead and dying"
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	
+	immediate = {
+		change_variable = {which = "spell_power" value = -3}
+		set_variable = { which = miscast_power value = 3 }
+		random_list = {
+			60 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}			
+			}
+			40 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.3100a#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+
+			character_event = {id = heavens_lore.31111}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+
+character_event = {
+	id = heavens_lore.31111#Apotheosis 1" 
+	desc = heavens_lore.31111_desc#"Your spell restores those close to death or those freshly dead"
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {		
+	clear_spell_effect = yes	
+		location = {
+			save_event_target_as = stormloc
+		}
+		character_event = { id = heavens_lore.31114}		
+	}
+	option = {
+		name = heavens_lore.31111a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.31111b#No
+		event_target:magic_caster = {
+			character_event = { id = magic_system.99997 }
+		}
+	}
+}
+
+character_event = {
+	id = heavens_lore.3114#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		random = {
+			chance = 35
+			event_target:stormloc = {
+				random_neighbor_province = {
+					save_event_target_as = stormloc
+				}
+			}
+		}
+		random_list = {
+			70 = {}
+			30 = {
+				character_event = { id = heavens_lore.31114 days = 15}
+			}
+		}
+			set_variable = {which = "stormcount" value = 0}
+			character_event = { id = heavens_lore.31117 }
+			
+		event_target:stormloc = {
+			add_province_modifier = { modifier = stormofheavensmain days = 15 }
+			any_neighbor_province = {
+				add_province_modifier = { modifier = stormofheavensecond days = 15 }
+			}
+		}
+	}	
+} 
+
+character_event = {
+	id = heavens_lore.31117#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		if = {
+			limit = {
+				NOT = {check_variable = {which = "stormcount" value = 15}}
+			}
+			character_event = { id = heavens_lore.31117 days = 1}
+			change_variable = {which = "stormcount" value = 1}
+			random = {
+				chance = 33
+				any_army = {
+					limit = {
+						location = event_target:stormloc
+					}
+					morale = -0.01
+					troops = -0.01
+				}
+			}
+			random = {
+				chance = 1
+				event_target:stormloc = {
+					destroy_random_building = yes 
+				}
+			}
+		}
+	}
+} 
+
+character_event = {
+	id = heavens_lore.3200#"High Magic; Drain Magic" 
+	desc = heavens_lore.3200_desc#"You channel the arcane powers and lash out blindly towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		change_variable = {which = "spell_power" value = -4}
+		set_variable = { which = miscast_power value = 4 }
+		random_list = {
+			45 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}			
+			}
+		55 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.3200a#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+
+
+			character_event = {id = heavens_lore.31112}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+character_event = {
+	id = heavens_lore.31112#Apotheosis 1" 
+	desc = heavens_lore.31112_desc#"Your spell restores those close to death or those freshly dead"
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {					
+		clear_spell_effect = yes
+		location = {
+			save_event_target_as = stormloc
+		}
+		character_event = { id = heavens_lore.31115}		
+	}
+	option = {
+		name = heavens_lore.31111a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.31111b#No
+		event_target:magic_caster = {
+			character_event = { id = magic_system.99997 }
+		}
+	}
+}
+
+character_event = {
+	id = heavens_lore.3115#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		random = {
+			chance = 45	
+			event_target:stormloc = {
+				random_neighbor_province = {
+					save_event_target_as = stormloc
+				}
+			}
+		}
+		random_list = {
+			60 = {}
+			40 = {
+				character_event = { id = heavens_lore.31115 days = 15}
+			}
+		}
+			set_variable = {which = "stormcount" value = 0}
+			character_event = { id = heavens_lore.31118 }
+			
+		event_target:stormloc = {
+			add_province_modifier = { modifier = stormofheavensmain days = 15 }
+			any_neighbor_province = {
+				add_province_modifier = { modifier = stormofheavensecond days = 15 }
+			}
+		}
+	}	
+} 
+
+character_event = {
+	id = heavens_lore.31118#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		if = {
+			limit = {
+				NOT = {check_variable = {which = "stormcount" value = 30}}
+			}
+			character_event = { id = heavens_lore.31118 days = 1}
+			change_variable = {which = "stormcount" value = 1}
+			random = {
+				chance = 40
+				any_army = {
+					limit = {
+						location = event_target:stormloc
+					}
+					morale = -0.02
+					troops = -0.01
+				}
+			}
+			random = {
+				chance = 3
+				event_target:stormloc = {
+					destroy_random_building = yes 
+				}
+			}
+		}
+	}
+}
+
+
+character_event = {
+	id = heavens_lore.3300#"High Magic; Drain Magic" 
+	desc = heavens_lore.3300_desc#"You channel the arcane powers and lash out blindly towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		change_variable = {which = "spell_power" value = -5}
+		set_variable = { which = miscast_power value = 5 }
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}
+			}
+			70 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.3300a#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+
+			character_event = {id = heavens_lore.31113}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+character_event = {
+	id = heavens_lore.31113#Apotheosis 1" 
+	desc = heavens_lore.31111_desc#"Your spell restores those close to death or those freshly dead"
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {			
+	clear_spell_effect = yes	
+		location = {
+			save_event_target_as = stormloc
+		}
+		character_event = { id = heavens_lore.31116}		
+	}
+	option = {
+		name = heavens_lore.31111a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.31111b#No
+		event_target:magic_caster = {
+			character_event = { id = magic_system.99997 }
+		}
+	}
+}
+
+character_event = {
+	id = heavens_lore.3116#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		random = {
+			chance = 55
+			event_target:stormloc = {
+				random_neighbor_province = {
+					save_event_target_as = stormloc
+				}
+			}
+		}
+		random_list = {
+			30 = {}
+			70 = {
+				character_event = { id = heavens_lore.31116 days = 15}
+			}
+		}
+			set_variable = {which = "stormcount" value = 0}
+			character_event = { id = heavens_lore.31119 }
+			
+		event_target:stormloc = {
+			add_province_modifier = { modifier = stormofheavensmain days = 15 }
+			any_neighbor_province = {
+				add_province_modifier = { modifier = stormofheavensecond days = 15 }
+			}
+		}
+	}	
+} 
+
+character_event = {
+	id = heavens_lore.31119#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		if = {
+			limit = {
+				NOT = {check_variable = {which = "stormcount" value = 15}}
+			}
+			character_event = { id = heavens_lore.31119 days = 1}
+			change_variable = {which = "stormcount" value = 1}
+			random = {
+				chance = 50
+				any_army = {
+					limit = {
+						location = event_target:stormloc
+					}
+					morale = -0.03
+					troops = -0.02
+				}
+			}
+			random = {
+				chance = 1
+				event_target:stormloc = {
+					destroy_random_building = yes 
+				}
+			}
+			random = { 
+				chance = 1
+				event_target:stormloc = {
+					random_province_holding = {
+						destroy_settlement = this
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+#Firey_convocation
+
+
+character_event = {
+	id = heavens_lore.4000#"High Magic; Firey Convocation" 
+	desc = heavens_lore.4000_desc#"Cast your powers and let lose the fires that burn perpetually.!"
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 4}}
+		name = heavens_lore.4000a#"High Magic; Soul Quench 1"
+		character_event = {id = heavens_lore.4100}
+		set_character_flag = heavens_magic_comet_of_cassondora_1
+	}
+	
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 5}}
+		name = heavens_lore.4000b#"High Magic; Soul Quench Power 2"
+		character_event = {id = heavens_lore.4200}
+		set_character_flag = heavens_magic_comet_of_cassondora_2
+	}
+	option = {
+		trigger = {check_variable = { which = "spell_power" value = 6}}
+		name = heavens_lore.4000c#"High Magic; Soul Quench Power 3"
+		character_event = {id = heavens_lore.4300}
+		set_character_flag = heavens_magic_comet_of_cassondora_3
+	}
+}
+
+character_event = {
+	id = heavens_lore.4100#"High Magic; Soul Quench" 
+	desc = heavens_lore.4100_desc#"You channel the arcane powers and lash out towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		change_variable = {which = "spell_power" value = -3}
+		set_variable = { which = miscast_power value = 3 }
+		random_list = {
+			45 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}
+			}
+			55 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.4100a#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+			character_event = {id = heavens_lore.41111}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+
+character_event = {
+	id = heavens_lore.41111#Soul Quench 1" 
+	desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		clear_spell_effect = yes
+		location = {
+			save_event_target_as = meteorloc
+		}
+		random_list = {
+			15 ={
+				character_event = { id = heavens_lore.41114 days = 15}
+			}
+			15 ={
+				character_event = { id = heavens_lore.41114 days = 25}
+			}
+			60 ={
+				character_event = { id = heavens_lore.41114 days = 35}
+			}
+			10 ={
+				character_event = { id = heavens_lore.41114 days = 5}
+			}			
+
+		} 
+	}
+	
+	option = {
+		name = heavens_lore.41111a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.41111b#No
+		character_event = {id = magic_system.99997}
+	}
+}
+
+character_event = {
+	id = heavens_lore.41114#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+	
+		random_list = {
+			50 = {
+				any_current_enemy = {
+					limit = {
+						any_army = {
+							location = event_target:meteorloc
+						}
+					}	
+					morale = -0.3
+					troops = -0.3
+					random = {
+						chance = 25
+						leader = {
+							death = yes
+						}
+					}
+				}
+					
+				event_target:meteorloc = {				
+					siege = {
+						enemy = {
+							morale = -0.3
+							troops = -0.3
+						}			
+					}
+				}
+			}
+			50 = {
+				random_army = {
+					limit = {
+							location = event_target:meteorloc
+							OR = {
+								owner = {
+									character = ROOT
+								}
+								leader = {
+									character = ROOT
+								}
+							}
+						}	
+					morale = -0.3
+					troops = -0.3
+					random = {
+						chance = 25
+						leader = {
+							death = yes
+						}
+					}
+				}
+					
+				event_target:meteorloc = {				
+					siege = {
+						leader = {
+							morale = -0.3
+							troops = -0.3
+						}			
+					}
+			
+				}
+			}
+		}
+	}
+}
+
+
+
+
+character_event = {
+	id = heavens_lore.4200#"High Magic; Drain Magic" 
+	desc = heavens_lore.4200_desc#"You channel the arcane powers and lash out blindly towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		change_variable = {which = "spell_power" value = -4}
+		set_variable = { which = miscast_power value = 4 }
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}    				
+			}
+			70 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.4200a#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+			character_event = {id = heavens_lore.41112}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+
+character_event = {
+	id = heavens_lore.41112#Soul Quench 2" 
+	desc = heavens_lore.41112_desc#"Your spell burns through the air, strike dead scores of men. "
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		clear_spell_effect = yes
+		location = {
+			save_event_target_as = meteorloc
+		}
+		random_list = {
+			30 ={
+				character_event = { id = heavens_lore.41115 days = 15}
+			}
+			30 ={
+				character_event = { id = heavens_lore.41115 days = 25}
+			}
+			30 ={
+				character_event = { id = heavens_lore.41115 days = 35}
+			}
+			10 ={
+				character_event = { id = heavens_lore.41115 days = 5}
+			}			
+
+		} 
+	}
+	
+	option = {
+		name = heavens_lore.21112a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.21112b#No
+		character_event = {id = magic_system.99997}
+	}
+}
+
+character_event = {
+	id = heavens_lore.41115#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		event_target:meteorloc = {
+			random_province_holding = {
+				destroy_random_building = yes
+			}
+		}
+		random_list = {
+
+			60 = {
+				any_current_enemy = {
+					limit = {
+						any_army = {
+							location = event_target:meteorloc
+						}
+					}	
+					morale = -0.5
+					troops = -0.5
+					random = {
+						chance = 50
+						leader = {
+							death = yes
+						}
+					}
+				}
+					
+				event_target:fieryconv = {				
+					siege = {
+						enemy = {
+							morale = -0.5
+							troops = -0.5
+						}			
+					}
+				}
+			}
+			40 = {
+				random_army = {
+					limit = {
+							location = event_target:meteorloc
+							OR = {
+								owner = {
+									character = ROOT
+								}
+								leader = {
+									character = ROOT
+								}
+							}
+						}	
+					morale = -0.5
+					troops = -0.5
+					random = {
+						chance = 50
+						leader = {
+							death = yes
+						}
+					}
+				}
+					
+				event_target:meteorloc = {				
+					siege = {
+						leader = {
+							morale = -0.5
+							troops = -0.5
+						}			
+					}
+			
+				}
+			}
+		}
+	}
+} 
+
+
+character_event = {
+	id = heavens_lore.4300#"High Magic; Soul Quench 3" 
+	desc = heavens_lore.4300_desc#"You channel the arcane powers and lash out blindly towards the enemy."
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		change_variable = {which = "spell_power" value = -5}
+		set_variable = { which = miscast_power value = 5 }
+		random_list = {
+			15 = {
+				modifier = {
+					factor = 1.1
+					has_character_modifier = magic_power_1                                                                                  
+				}   
+				modifier = {
+					factor = 1.2
+					has_character_modifier = magic_power_2                                                                                  
+				}    
+				modifier = {
+					factor = 3
+					has_character_modifier = magic_power_3                                                                                  
+				}    
+				modifier = {
+					factor = 4
+					has_character_modifier = magic_power_4                                                                                  
+				}    				
+			}
+			85 = {
+				set_character_flag = miscast
+			}
+		}
+	}
+	option = {
+		name = heavens_lore.4300a#
+		if = {
+			limit = {
+				has_character_flag = miscast
+			}
+			character_event = {id = magic_system.99991}#If has the miscast flag, skip to the miscast event table
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = miscast
+					any_current_enemy = {
+						any_realm_character = { 
+								character = event_target:magic_dispeler
+							}
+						}
+					}
+				}
+			character_event = {id = heavens_lore.41113}#If there is no one to attempt to dispell then cast the spell. 
+			break = yes
+		}
+		event_target:magic_dispeler = {
+			character_event = {id = dispell.1}#Send dueling chain event to the dispeller. 
+		}
+	}
+}
+
+character_event = {
+	id = heavens_lore.41113#Drain Magic Power 1" 
+	desc = heavens_lore.41113_desc#"Your spell burns through the air, taking from all enemies the ability to cast. "
+	is_triggered_only = yes
+	picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		clear_spell_effect = yes
+		location = {
+			save_event_target_as = meteorloc
+		}
+		random_list = {
+			40 ={
+				character_event = { id = heavens_lore.41115 days = 15}
+			}
+			10 ={
+				character_event = { id = heavens_lore.41115 days = 25}
+			}
+			10 ={
+				character_event = { id = heavens_lore.41115 days = 35}
+			}
+			40 ={
+				character_event = { id = heavens_lore.41115 days = 5}
+			}			
+
+		} 
+	}	
+	option = {
+		name = heavens_lore.41113a#Cast Another Spell ?
+		trigger = {check_variable = {which = "spell_power" value = 1}}
+		long_character_event = { id = heavens_lore.1}	
+	}
+	option = {
+		name = heavens_lore.41113b#No
+		event_target:magic_caster = {
+			character_event = { id = magic_system.99997 }
+		}
+	}
+}
+
+
+
+	 
+character_event = {
+	id = heavens_lore.41116#Firey_convocation event 1" 
+	#desc = heavens_lore.41111_desc#"Your power consumes the life of your chosen target "
+	is_triggered_only = yes
+	hide_window = yes
+	#picture = FX_evt_mage_lore_high_magic
+	immediate = {
+		event_target:meteorloc = {
+			random_province_holding = {
+				destroy_settlement = THIS 
+			}
+		}
+		random_list = {
+
+			65 = {
+				any_current_enemy = {
+					limit = {
+						any_army = {
+							location = event_target:meteorloc
+						}
+					}	
+					morale = -1
+					troops = -1
+					random = {
+						chance = 25
+						leader = {
+							death = yes
+						}
+					}
+				}
+					
+				event_target:meteorloc = {				
+					siege = {
+						enemy = {
+							morale = -1
+							troops = -1
+						}			
+					}
+				}
+			}
+			35 = {
+				random_army = {
+					limit = {
+							location = event_target:meteorloc
+							OR = {
+								owner = {
+									character = ROOT
+								}
+								leader = {
+									character = ROOT
+								}
+							}
+						}	
+					morale = -1
+					troops = -1
+					random = {
+						chance = 95
+						leader = {
+							death = yes
+						}
+					}
+				}
+					
+				event_target:meteorloc = {				
+					siege = {
+						leader = {
+							morale = -1
+							troops = -1
+						}			
+					}
+			
+				}
+			}
+		}
+	}
+} 

@@ -18,7 +18,7 @@ targetted_decisions = {
 	
 		potential = {
 		OR = {
-			NOT = { character = FROM  } 
+			NOT = { character = FROM } 
 			NOT = { has_character_modifier = magic_shield }
 		}
 		}

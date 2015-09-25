@@ -1,0 +1,6 @@
+loremaster = {
+	learning = 3
+	combat_rating = -1
+	random = no
+	customizer = no
+}
