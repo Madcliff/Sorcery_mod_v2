@@ -2,7 +2,7 @@ targetted_decisions = {
 	gnostic_cants_compulsion_decision = {
 			
 		ai_target_filter = realm
-		filter = all
+		filter = self
 		from_potential = {
 			is_playable = yes
 			ai = no
@@ -17,17 +17,8 @@ targetted_decisions = {
 		}
 	
 		potential = {
-		OR = {
-			NOT = { character = FROM  } 
-			NOT = { has_character_modifier = magic_shield }
 		}
-		}
-		allow = { 
-			is_within_diplo_range = FROM
-		}
-		
-		effect = {	
-			save_event_target_as = gnostic_cants_compulsion_target	
+		effect = {		
 
 			FROM = {
 				character_event = { id = gnostic_cants_compulsion.99990 }

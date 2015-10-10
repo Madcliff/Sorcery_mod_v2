@@ -1,0 +1,38 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_obj_study_the_gnosis"
+		texturefile = "gfx/objectives/gnosis_objective.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}		
+	spriteType = {
+		name = "GFX_obj_study_the_anagogis"
+		texturefile = "gfx/objectives/anagogis_objective.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_study_the_aporos"
+		texturefile = "gfx/objectives/aporos_objective.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_study_the_daimos"
+		texturefile = "gfx/objectives/daimos_objective.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}		
+	spriteType = {
+		name = "GFX_obj_study_blood_magic"
+		texturefile = "gfx/objectives/blood_objective.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	
+}

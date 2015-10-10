@@ -6,21 +6,102 @@ character_event = {
 	hide_window = yes
 	
 	immediate = {
-		save_event_target_as = gnostic_cants_compulsion_caster
-		any_opinion_modifier_target = {
+#Object
+		if = {
 			limit = {
-				reverse_has_opinion_modifier = {
-					who = PREV
-					modifier = mindmanip
+				NOT = { 
+					any_opinion_modifier_target = {
+#						limit = {
+							reverse_has_opinion_modifier = {
+								who = PREV
+								modifier = mindmanipulationobject#the one who is the object of the manipulation, 
+							}
+#						}
+					}
 				}
 			}
-			save_event_target_as = gnostic_cants_compulsion_object
-			reverse_remove_opinion = {
-				who = PREV
-				modifier = mindmanip
+			ROOT = {
+				save_event_target_as = gnostic_cants_compulsion_object
+			}
+		}
+
+		
+		if = {
+			limit = {
+				any_opinion_modifier_target = {
+#					limit = {
+						reverse_has_opinion_modifier = {
+							who = PREV
+							modifier = mindmanipulationobject#the one who is the object of the manipulation, 
+						}
+#					}
+				}
+			}
+			any_opinion_modifier_target = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = PREV
+						modifier = mindmanipulationobject#the one who is the object of the manipulation, 
+					}
+				}
+				save_event_target_as = gnostic_cants_compulsion_object
+				reverse_remove_opinion = {
+					who = PREV
+					modifier = mindmanipulationobject
+				}
+			}
+		}	
+		
+	
+
+#subject		
+		if = {
+			limit = {
+				NOT = { 
+					any_opinion_modifier_target = {
+#						limit = {
+							reverse_has_opinion_modifier = {
+								who = PREV
+								modifier = mindmanipulationsubject#whose mind is being manipulated.
+							}
+#						}
+					}
+				}
+			}			
+			ROOT = {		
+				save_event_target_as = gnostic_cants_compulsion_subject
 			}
 		}		
 		
+		if = {
+			limit = {
+				any_opinion_modifier_target = {
+#					limit = {
+						reverse_has_opinion_modifier = {
+							who = PREV
+							modifier = mindmanipulationsubject#whose mind is being manipulated.
+						}
+#					}
+				}
+			}			
+			any_opinion_modifier_target = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = PREV
+						modifier = mindmanipulationsubject#whose mind is being manipulated.
+					}
+				}
+				save_event_target_as = gnostic_cants_compulsion_subject
+				reverse_remove_opinion = {
+					who = PREV
+					modifier = mindmanipulationsubject
+				}
+			}
+			set_character_flag = target_object
+		}
+		
+	
+					
 		if = {
 			limit = {
 				learning = 5
@@ -140,11 +221,11 @@ character_event = {
 		}		
 					
 
-		character_event = { id = gnostic_cants_compulsion.1}
+		long_character_event = { id = gnostic_cants_compulsion.1}
 	}
 }
 
-character_event = {
+long_character_event = {
 	id = gnostic_cants_compulsion.1
 	desc = gnostic_cants_compulsion.1_desc
 	picture = GFX_evt_mongols
@@ -156,191 +237,15 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.2
-		character_event = { id = gnostic_cants_compulsion.2 }
+		trigger = { has_character_flag = target_object}
+		character_event = { id = gnostic_cants_compulsion.202 }
+		clr_character_flag =  target_object
 		}
 	option = {
 		name = gnostic_cants_compulsion.3	
 		character_event = { id = gnostic_cants_compulsion.3 }
 		}
 }
-
-character_event = {
-	id = gnostic_cants_compulsion.2
-	desc = gnostic_cants_compulsion.2_desc
-	picture = GFX_evt_mongols
-	
-	is_triggered_only = yes
-	option = {
-		name = gnostic_cants_compulsion.201
-		character_event = { id = gnostic_cants_compulsion.201 }
-		}
-	option = {
-		name = gnostic_cants_compulsion.202	
-		character_event = { id = gnostic_cants_compulsion.202 }
-		}
-	option = {
-		name = gnostic_cants_compulsion.1	
-		character_event = { id = gnostic_cants_compulsion.1 }
-		}
-}
-
-character_event = {
-	id = gnostic_cants_compulsion.201
-	desc = gnostic_cants_compulsion.201_desc
-	picture = GFX_evt_mongols
-	
-	is_triggered_only = yes
-	option = {
-		name = gnostic_cants_compulsion.20101
-		character_event = { id = gnostic_cants_compulsion.20101 }
-		}
-	option = {
-		name = gnostic_cants_compulsion.20102	
-		character_event = { id = gnostic_cants_compulsion.20102 }
-		}		
-	option = {
-		name = gnostic_cants_compulsion.20103	
-		character_event = { id = gnostic_cants_compulsion.20103 }
-		}
-	option = {
-		name = gnostic_cants_compulsion.2	
-		character_event = { id = gnostic_cants_compulsion.2 }
-		}
-}
-
-character_event = {
-	id = gnostic_cants_compulsion.20101
-	desc = gnostic_cants_compulsion.20101_desc
-	picture = GFX_evt_mongols
-	
-	is_triggered_only = yes
-	option = {
-			name = gnostic_cants_compulsion.20101a	
-		event_target:gnostic_cants_compulsion_target = {	
-		opinion = { modifier = opinion_mind_influence who = ROOT years = 10 }
-		}
-			set_variable = {which = "var1" value = 1}
-			character_event = { id = gnostic_cants_compulsion.9999 }
-#			#clr_character_flag = Magic_Divining
-#			#set_character_flag = sorcery
-#			#hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }
-	}		
-	option = {
-			name = gnostic_cants_compulsion.20101b
-	
-		event_target:gnostic_cants_compulsion_target = {	
-		opinion = { modifier = opinion_mind_dark_whispers who = ROOT years = 10 }
-		}
-			set_variable = {which = "var1" value = 1}
-			character_event = { id = gnostic_cants_compulsion.9999 }			
-#			#clr_character_flag = Magic_Divining
-#			#set_character_flag = sorcery
-#			#hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }
-	}	
-
-		option = {
-			name = gnostic_cants_compulsion.20101c
-			trigger = { event_target:gnostic_cants_compulsion_target = { opinion = { who = ROOT value = 100 }}}
-			event_target:gnostic_cants_compulsion_target = {	
-				opinion = { modifier = opinion_mind_control who = ROOT years = 1000 }
-			}
-#			#clr_character_flag = Magic_Divining
-#			#set_character_flag = sorcery
-#			#hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }		
-			set_variable = {which = "var1" value = 1}
-			character_event = { id = gnostic_cants_compulsion.9999 }
-		}
-		option = {
-			name = gnostic_cants_compulsion.20101d
-			character_event = { id = gnostic_cants_compulsion.201 }
-		}
-}
-
-
-character_event = {
-	id = gnostic_cants_compulsion.20102
-	desc = gnostic_cants_compulsion.20102_desc
-	picture = GFX_evt_mongols
-	
-	is_triggered_only = yes
-	option = {
-			name = gnostic_cants_compulsion.20102a
-		event_target:gnostic_cants_compulsion_target = {	
-		 	add_friend = ROOT
-		}
-			##clr_character_flag = Magic_Divining
-			##set_character_flag = sorcery
-			##hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }		
-			set_variable = {which = "var1" value = 1}
-			character_event = { id = gnostic_cants_compulsion.9999 }
-	}		
-	option = {
-			name = gnostic_cants_compulsion.20102b
-				event_target:gnostic_cants_compulsion_target = {	
-				add_lover  = ROOT
-			}
-			##clr_character_flag = Magic_Divining
-			##set_character_flag = sorcery
-			##hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }
-			set_variable = {which = "var1" value = 1}
-			character_event = { id = gnostic_cants_compulsion.9999 }	}	
-	option = {
-			name = gnostic_cants_compulsion.20102c
-			event_target:gnostic_cants_compulsion_target = {	
-				add_rival = ROOT
-			}
-			##clr_character_flag = Magic_Divining
-			##set_character_flag = sorcery
-			##hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }		
-			set_variable = {which = "var1" value = 1}
-			character_event = { id = gnostic_cants_compulsion.9999 }
-
-	}
-		option = {
-			name = gnostic_cants_compulsion.20102d
-			character_event = { id = gnostic_cants_compulsion.201 }
-		}
-}	
-	
-character_event = {
-	id = gnostic_cants_compulsion.20103
-	desc = gnostic_cants_compulsion.20103_desc
-	picture = GFX_evt_mongols
-	
-	is_triggered_only = yes
-		
-	option = {
-			name = gnostic_cants_compulsion.20103a
-			trigger = { OR = { event_target:gnostic_cants_compulsion_target = { trait = lunatic  } event_target:gnostic_cants_compulsion_target = { has_opinion_modifier = { who = ROOT modifier = opinion_mind_control } } event_target:gnostic_cants_compulsion_target = { ROOT = { is_guardian = yes } }} check_variable = { which = "spell_power" value = 5   } } 					
-			event_target:gnostic_cants_compulsion_target = {	
-				abdicate_to = ROOT
-			}
-			#clr_character_flag = Magic_Divining
-			#set_character_flag = sorcery
-			#hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }			
-			set_variable = {which = "var1" value = 5}
-			character_event = { id = gnostic_cants_compulsion.9999 }
-		}
-	option = {
-			name = gnostic_cants_compulsion.20103b
-			trigger = { ROOT = { higher_tier_than = event_target:gnostic_cants_compulsion_target }  check_variable = { which = "spell_power" value = 10   } event_target:gnostic_cants_compulsion_target = { independent = yes }   NOT = { ROOT = { is_liege_or_above = event_target:gnostic_cants_compulsion_target } }} 			
-			event_target:gnostic_cants_compulsion_target = {
-					set_defacto_liege = ROOT 				
-			}
-			#clr_character_flag = Magic_Divining
-			#set_character_flag = sorcery
-			#hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }			
-			set_variable = {which = "var1" value = 10}
-			character_event = { id = gnostic_cants_compulsion.9999 }
-		}
-	option = {
-		name = gnostic_cants_compulsion.20103c
-		character_event = { id = gnostic_cants_compulsion.201 }			
-	}		
-}
-
-
-
 
 
 character_event = {
@@ -362,8 +267,8 @@ character_event = {
 		character_event = { id = gnostic_cants_compulsion.20203 }
 		}
 	option = {
-		name = gnostic_cants_compulsion.2	
-		character_event = { id = gnostic_cants_compulsion.2 }
+		name = gnostic_cants_compulsion.1	
+		long_character_event = { id = gnostic_cants_compulsion.1 }
 		}
 }
 
@@ -375,7 +280,7 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 			name = gnostic_cants_compulsion.20201a
-		event_target:gnostic_cants_compulsion_target = {	
+		event_target:gnostic_cants_compulsion_subject = {	
 		opinion = { modifier = opinion_mind_influence who = event_target:gnostic_cants_compulsion_object years = 10 }
 		}
 			#clr_character_flag = Magic_Divining
@@ -386,7 +291,7 @@ character_event = {
 	}		
 	option = {
 			name = gnostic_cants_compulsion.20201b
-		event_target:gnostic_cants_compulsion_target = {	
+		event_target:gnostic_cants_compulsion_subject = {	
 		opinion = { modifier = opinion_mind_dark_whispers who = event_target:gnostic_cants_compulsion_object years = 10 }
 		}
 			#clr_character_flag = Magic_Divining
@@ -398,8 +303,8 @@ character_event = {
 
 		option = {
 			name = gnostic_cants_compulsion.20201c
-		trigger = { event_target:gnostic_cants_compulsion_target = { opinion = { who = event_target:gnostic_cants_compulsion_object value = 100 }}}
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger = { event_target:gnostic_cants_compulsion_subject = { opinion = { who = event_target:gnostic_cants_compulsion_object value = 100 }}}
+		event_target:gnostic_cants_compulsion_subject = {	
 		opinion = { modifier = opinion_mind_control who = event_target:gnostic_cants_compulsion_object years = 1000 }
 		}
 			#clr_character_flag = Magic_Divining
@@ -423,7 +328,7 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 			name = gnostic_cants_compulsion.20202a
-		event_target:gnostic_cants_compulsion_target = {	
+		event_target:gnostic_cants_compulsion_subject = {	
 		 	add_friend = event_target:gnostic_cants_compulsion_object
 		}
 			#clr_character_flag = Magic_Divining
@@ -434,7 +339,7 @@ character_event = {
 	}		
 	option = {
 			name = gnostic_cants_compulsion.20202b
-		event_target:gnostic_cants_compulsion_target = {	
+		event_target:gnostic_cants_compulsion_subject = {	
 		 	add_lover  = event_target:gnostic_cants_compulsion_object
 		}
 			#clr_character_flag = Magic_Divining
@@ -445,7 +350,7 @@ character_event = {
 	}	
 	option = {
 			name = gnostic_cants_compulsion.20202c
-		event_target:gnostic_cants_compulsion_target = {	
+		event_target:gnostic_cants_compulsion_subject = {	
 		 	add_rival = event_target:gnostic_cants_compulsion_object
 		}
 			#clr_character_flag = Magic_Divining
@@ -469,8 +374,8 @@ character_event = {
 		
 	option = {
 			name = gnostic_cants_compulsion.20203a
-			trigger = { OR = { event_target:gnostic_cants_compulsion_target = { trait = lunatic  } event_target:gnostic_cants_compulsion_target = { has_opinion_modifier = { who = root modifier = opinion_mind_control } } event_target:gnostic_cants_compulsion_target = { event_target:gnostic_cants_compulsion_object = { is_guardian = yes } }} check_variable = { which = "spell_power" value = 5   } } 					
-			event_target:gnostic_cants_compulsion_target = {	
+			trigger = { OR = { event_target:gnostic_cants_compulsion_subject = { trait = lunatic  } event_target:gnostic_cants_compulsion_subject = { has_opinion_modifier = { who = ROOT modifier = opinion_mind_control } } event_target:gnostic_cants_compulsion_subject = { event_target:gnostic_cants_compulsion_object = { is_guardian = yes } }} check_variable = { which = "spell_power" value = 5   } } 					
+			event_target:gnostic_cants_compulsion_subject = {	
 				abdicate_to = event_target:gnostic_cants_compulsion_object
 			}
 			#clr_character_flag = Magic_Divining
@@ -481,8 +386,8 @@ character_event = {
 		}
 	option = {
 			name = gnostic_cants_compulsion.20203b
-			trigger = { OR = { event_target:gnostic_cants_compulsion_target = { trait = lunatic  } event_target:gnostic_cants_compulsion_target = { has_opinion_modifier = { who = root modifier = opinion_mind_control } } event_target:gnostic_cants_compulsion_target = { event_target:gnostic_cants_compulsion_object = { is_guardian = yes } }} event_target:gnostic_cants_compulsion_object = { higher_tier_than = event_target:gnostic_cants_compulsion_target }  check_variable = { which = "spell_power" value = 10   } event_target:gnostic_cants_compulsion_target = { independent = yes }   NOT = { event_target:gnostic_cants_compulsion_object = { is_liege_or_above = event_target:gnostic_cants_compulsion_target } }} 			
-			event_target:gnostic_cants_compulsion_target = {
+			trigger = { OR = { event_target:gnostic_cants_compulsion_subject = { trait = lunatic  } event_target:gnostic_cants_compulsion_subject = { has_opinion_modifier = { who = ROOT modifier = opinion_mind_control } } event_target:gnostic_cants_compulsion_subject = { event_target:gnostic_cants_compulsion_object = { is_guardian = yes } }} event_target:gnostic_cants_compulsion_object = { higher_tier_than = event_target:gnostic_cants_compulsion_subject }  check_variable = { which = "spell_power" value = 10   } event_target:gnostic_cants_compulsion_subject = { independent = yes }   NOT = { event_target:gnostic_cants_compulsion_object = { is_liege_or_above = event_target:gnostic_cants_compulsion_subject } }} 			
+			event_target:gnostic_cants_compulsion_subject = {
 					set_defacto_liege = event_target:gnostic_cants_compulsion_object 				
 			}
 			#clr_character_flag = Magic_Divining
@@ -513,7 +418,7 @@ character_event = {
 		}
 	option = {
 		name = gnostic_cants_compulsion.1	
-		character_event = { id = gnostic_cants_compulsion.1 }
+		long_character_event = { id = gnostic_cants_compulsion.1 }
 		}		
 }
 
@@ -525,8 +430,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.301a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = lustful } } }		
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = lustful } } }		
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = lustful
 		}
 			#clr_character_flag = Magic_Divining
@@ -537,8 +442,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.301b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = chaste } } }		
-		event_target:gnostic_cants_compulsion_target = {		
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = chaste } } }		
+		event_target:gnostic_cants_compulsion_subject = {		
 			add_trait = chaste	
 		}
 			#clr_character_flag = Magic_Divining
@@ -549,8 +454,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.301c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = gluttonous } } }		
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = gluttonous } } }		
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = gluttonous
 		}
 			#clr_character_flag = Magic_Divining
@@ -573,8 +478,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.401a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = temperate } } }		
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = temperate } } }		
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = temperate
 		}
 			#clr_character_flag = Magic_Divining
@@ -585,8 +490,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.401b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = greedy } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = greedy } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = greedy 
 		}
 			#clr_character_flag = Magic_Divining
@@ -597,8 +502,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.401c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = charitable } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = charitable } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = charitable 
 		}
 			#clr_character_flag = Magic_Divining
@@ -622,8 +527,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.501a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = slothful } } }		
-		event_target:gnostic_cants_compulsion_target = {		
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = slothful } } }		
+		event_target:gnostic_cants_compulsion_subject = {		
 			add_trait = slothful
 		}
 			#clr_character_flag = Magic_Divining
@@ -634,8 +539,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.501b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = diligent } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = diligent } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = diligent 
 		}
 			#clr_character_flag = Magic_Divining
@@ -646,8 +551,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.501c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = envious } } } 
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = envious } } } 
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = envious 
 		}
 			#clr_character_flag = Magic_Divining
@@ -671,8 +576,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.601a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = kind } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = kind } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = kind
 		}
 			#clr_character_flag = Magic_Divining
@@ -683,8 +588,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.601b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = wroth } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = wroth } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = wroth 
 		}
 			#clr_character_flag = Magic_Divining
@@ -695,8 +600,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.601c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = patient } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = patient } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = patient 
 		}
 			#clr_character_flag = Magic_Divining
@@ -721,8 +626,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.701a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = proud } } }
-		event_target:gnostic_cants_compulsion_target = {			
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = proud } } }
+		event_target:gnostic_cants_compulsion_subject = {			
 			add_trait = proud
 		}
 			#clr_character_flag = Magic_Divining
@@ -733,8 +638,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.701b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = humble } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = humble } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = humble 
 		}
 			#clr_character_flag = Magic_Divining
@@ -745,8 +650,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.701c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = deceitful } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = deceitful } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = deceitful 
 		}
 			#clr_character_flag = Magic_Divining
@@ -771,8 +676,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.801a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = craven } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = craven } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 
 			add_trait = craven
 		}
@@ -784,8 +689,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.801b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = honest } } } 	
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = honest } } } 	
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = honest 
 		}
 			#clr_character_flag = Magic_Divining
@@ -796,8 +701,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.801c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = brave } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = brave } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = brave 
 		}
 			#clr_character_flag = Magic_Divining
@@ -822,8 +727,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.901a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = shy  } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = shy  } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = shy
 		}
 			#clr_character_flag = Magic_Divining
@@ -834,8 +739,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.901b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = gregarious } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = gregarious } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = gregarious 
 		}
 			#clr_character_flag = Magic_Divining
@@ -846,8 +751,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.901c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = ambitious } } }	
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = ambitious } } }	
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = ambitious 
 		}
 			#clr_character_flag = Magic_Divining
@@ -873,8 +778,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1001a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = content  } } }		
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = content  } } }		
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = content
 		}
 			#clr_character_flag = Magic_Divining
@@ -885,8 +790,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1001b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = arbitrary } } }  
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = arbitrary } } }  
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = arbitrary 
 		}
 			#clr_character_flag = Magic_Divining
@@ -897,8 +802,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1001c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = just } } }	
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = just } } }	
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = just 
 		}
 			#clr_character_flag = Magic_Divining
@@ -923,8 +828,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1101a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = cynical } } }			
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = cynical } } }			
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = cynical
 		}
 			#clr_character_flag = Magic_Divining
@@ -935,8 +840,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1101b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = zealous } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = zealous } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = zealous 
 		}
 			#clr_character_flag = Magic_Divining
@@ -947,8 +852,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1101c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = paranoid } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = paranoid } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = paranoid 
 		}
 			#clr_character_flag = Magic_Divining
@@ -973,8 +878,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1201a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = trusting  } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = trusting  } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = trusting
 		}
 			#clr_character_flag = Magic_Divining
@@ -985,8 +890,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1201b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = cruel } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = cruel } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = cruel 
 		}
 			#clr_character_flag = Magic_Divining
@@ -997,8 +902,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1201c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = sympathy_christendom } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = sympathy_christendom } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = sympathy_christendom 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1022,8 +927,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1301a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = sympathy_pagans } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = sympathy_pagans } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = sympathy_pagans
 		}
 			#clr_character_flag = Magic_Divining
@@ -1034,8 +939,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1301b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = sympathy_islam } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = sympathy_islam } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = sympathy_islam 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1046,8 +951,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1301c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = sympathy_zoroastrianism } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = sympathy_zoroastrianism } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = sympathy_zoroastrianism 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1072,8 +977,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1401a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = stressed } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = stressed } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = stressed
 		}
 			#clr_character_flag = Magic_Divining
@@ -1084,8 +989,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1401b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = drunkard } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = drunkard } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = drunkard 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1096,8 +1001,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1401c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = homosexual } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = homosexual } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = homosexual 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1124,8 +1029,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1501a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = lunatic } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = lunatic } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = lunatic
 		}
 			#clr_character_flag = Magic_Divining
@@ -1136,8 +1041,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1501b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = possessed } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = possessed } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = possessed 
 		}
 			set_variable = {which = "var1" value = 1}
@@ -1145,8 +1050,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1501c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { not = { trait = incapable } } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = incapable } } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = incapable 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1176,8 +1081,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.302a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = lustful } } 
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = lustful } } 
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = lustful
 		}
 			#clr_character_flag = Magic_Divining
@@ -1188,8 +1093,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.302b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = chaste } }		
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = chaste } }		
+		event_target:gnostic_cants_compulsion_subject = {	
 	
 			remove_trait = chaste	
 		}
@@ -1201,8 +1106,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.302c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = gluttonous  } }		
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = gluttonous  } }		
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = gluttonous
 		}
 			#clr_character_flag = Magic_Divining
@@ -1225,8 +1130,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.402a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = temperate } }
-		event_target:gnostic_cants_compulsion_target = {			
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = temperate } }
+		event_target:gnostic_cants_compulsion_subject = {			
 			remove_trait = temperate
 		}
 			#clr_character_flag = Magic_Divining
@@ -1237,8 +1142,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.402b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = greedy  } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = greedy  } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = greedy 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1249,8 +1154,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.402c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = charitable } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = charitable } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = charitable 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1274,8 +1179,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.502a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = slothful } }
-		event_target:gnostic_cants_compulsion_target = {		
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = slothful } }
+		event_target:gnostic_cants_compulsion_subject = {		
 			remove_trait = slothful
 		}
 			#clr_character_flag = Magic_Divining
@@ -1286,8 +1191,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.502b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = diligent } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = diligent } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = diligent 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1298,8 +1203,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.502c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = envious  } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = envious  } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = envious 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1323,8 +1228,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.602a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = kind } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = kind } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = kind
 		}
 			#clr_character_flag = Magic_Divining
@@ -1335,8 +1240,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.602b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = wroth } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = wroth } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = wroth 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1347,8 +1252,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.602c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = patient } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = patient } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = patient 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1373,8 +1278,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.702a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = proud } }		
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = proud } }		
+		event_target:gnostic_cants_compulsion_subject = {	
 		remove_trait = proud
 		}
 			#clr_character_flag = Magic_Divining
@@ -1385,8 +1290,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.702b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = humble } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = humble } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = humble 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1397,8 +1302,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.702c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = deceitful  } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = deceitful  } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = deceitful 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1423,8 +1328,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.802a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = craven } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = craven } }
+		event_target:gnostic_cants_compulsion_subject = {	
 
 			remove_trait = craven
 		}
@@ -1436,8 +1341,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.802b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = honest } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = honest } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = honest 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1448,8 +1353,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.802c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = brave } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = brave } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = brave 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1474,8 +1379,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.902a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = shy } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = shy } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = shy
 		}
 			set_variable = {which = "var1" value = 1}
@@ -1483,8 +1388,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.902b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = gregarious } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = gregarious } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = gregarious 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1495,8 +1400,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.902c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = ambitious } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = ambitious } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = ambitious 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1522,8 +1427,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1002a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = content } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = content } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = content
 		}
 			#clr_character_flag = Magic_Divining
@@ -1534,8 +1439,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1002b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = arbitrary } }		
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = arbitrary } }		
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = arbitrary 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1546,8 +1451,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1002c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = just } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = just } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = just 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1572,8 +1477,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1102a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = cynical } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = cynical } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = cynical
 		}
 			#clr_character_flag = Magic_Divining
@@ -1584,8 +1489,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1102b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = zealous } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = zealous } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = zealous 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1596,8 +1501,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1102c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = paranoid } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = paranoid } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = paranoid 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1622,8 +1527,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1202a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = trusting } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = trusting } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = trusting
 		}
 			#clr_character_flag = Magic_Divining
@@ -1634,8 +1539,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1202b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = cruel } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = cruel } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = cruel 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1646,8 +1551,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1202c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = sympathy_christendom } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = sympathy_christendom } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = sympathy_christendom 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1671,8 +1576,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1302a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = sympathy_pagans } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = sympathy_pagans } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = sympathy_pagans
 		}
 			#clr_character_flag = Magic_Divining
@@ -1683,8 +1588,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1302b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = sympathy_islam } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = sympathy_islam } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = sympathy_islam 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1695,8 +1600,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1302c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = sympathy_zoroastrianism } }		
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = sympathy_zoroastrianism } }		
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = sympathy_zoroastrianism 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1721,8 +1626,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1402a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = stressed } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = stressed } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = stressed
 		}
 			#clr_character_flag = Magic_Divining
@@ -1733,8 +1638,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1402b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = drunkard } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = drunkard } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = drunkard 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1745,8 +1650,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1402c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = homosexual } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = homosexual } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = homosexual 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1773,8 +1678,8 @@ character_event = {
 	is_triggered_only = yes
 	option = {
 		name = gnostic_cants_compulsion.1502a
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = lunatic } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = lunatic } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = lunatic
 		}
 			#clr_character_flag = Magic_Divining
@@ -1785,8 +1690,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1502b
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = possessed } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = possessed } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = possessed 
 		}
 			#clr_character_flag = Magic_Divining
@@ -1797,8 +1702,8 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1502c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_target = { trait = incapable } }
-		event_target:gnostic_cants_compulsion_target = {	
+		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { trait = incapable } }
+		event_target:gnostic_cants_compulsion_subject = {	
 			remove_trait = incapable 
 		}
 			#clr_character_flag = Magic_Divining

@@ -43,7 +43,11 @@ opinion_magic_secular = {
 opinion = -10
 months = 6
 }
-mindmanip = {
+mindmanipulationsubject = {
+opinion = -1
+}
+mindmanipulationobject = {
+opinion = -1
 }
 opinion_magic_priest= {
 opinion = -20
