@@ -15,3 +15,7 @@ magic_burning = {
 magic_combat_mod = {
  local_movement_speed = 0.4		
 }
+
+mental_torture_1 = {
+learning = -1
+}

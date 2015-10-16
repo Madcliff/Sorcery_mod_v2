@@ -1,8 +1,7 @@
 targetted_decisions = {
-	gnostic_cants_agonies_decision = {
-			
-		ai_target_filter   = realm
-		filter = all
+	gnostic_cants_agonies_decision = {		
+		ai_target_filter   = self
+		filter = self
 		from_potential = {
 			is_playable = yes
 			ai = no
@@ -17,22 +16,23 @@ targetted_decisions = {
 		}
 	
 		potential = {
-		OR = {
-			NOT = { character = FROM } 
-			NOT = { has_character_modifier = magic_shield }
-		}
+			any_opinion_modifier_target = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = PREV
+						modifier = mindmanipulationsubject#whose mind is being manipulated.
+					}
+				}
+			}
 		}
 		allow = { 
-			is_within_diplo_range = FROM
+			
 		}
 		
 		effect = {	
-			save_event_target_as = gnostic_cants_agonies_target	
-
 			FROM = {
 				character_event = { id = gnostic_cants_agonies.99990 }
-			}
-			
+			}			
 		}
 		revoke_allowed = {
 			always = no

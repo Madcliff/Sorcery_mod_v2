@@ -8,6 +8,32 @@ character_event = {
 	immediate = {
 		save_event_target_as = gnostic_cants_agonies_caster
 		
+#subject		
+		if = {
+			limit = {
+				any_opinion_modifier_target = {
+#					limit = {
+						reverse_has_opinion_modifier = {
+							who = PREV
+							modifier = mindmanipulationsubject#whose mind is being manipulated.
+						}
+#					}
+				}
+			}			
+			any_opinion_modifier_target = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = PREV
+						modifier = mindmanipulationsubject#whose mind is being manipulated.
+					}
+				}
+				save_event_target_as = gnostic_cants_agonies_target
+				reverse_remove_opinion = {
+					who = PREV
+					modifier = mindmanipulationsubject
+				}
+			}
+		}		
 		if = {
 			limit = {
 				learning = 5
