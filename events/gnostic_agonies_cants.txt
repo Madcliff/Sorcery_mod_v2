@@ -152,7 +152,8 @@ character_event = {
 			change_variable = { which = "spell_power" value = 9}
 		}		
 					
-
+		set_variable = { which = bodytorture value = 0}
+		set_variable = { which = mentaltorture value = 0 }
 		character_event = { id = gnostic_cants_agonies.1}
 	}
 }
@@ -189,10 +190,7 @@ character_event = {
 	option = {
 		name = gnostic_cants_agonies.2a
 		trigger = {
-			event_target:gnostic_cants_agonies_target ={
-				not =  {
-					trait = wounded 
-				}
+			check_variable = { which = bodytorture value = 0 }
 			}
 		}
 		character_event = { id = gnostic_cants_agonies.201 }
@@ -200,48 +198,28 @@ character_event = {
 	option = {
 		name = gnostic_cants_agonies.2b
 		trigger = {
-			event_target:gnostic_cants_agonies_target ={
-				trait = wounded
-				not =  {
-					trait = maimed 
-				}
-			}
+			check_variable = { which = bodytorture value = 1 }
 		}
 		character_event = { id = gnostic_cants_agonies.202 }
 	}
 	option = {
 		name = gnostic_cants_agonies.2c
 		trigger = {
-			event_target:gnostic_cants_agonies_target ={
-				trait = maimed
-				not =  {
-					trait = infirm 
-				}
-			}
+			check_variable = { which = bodytorture value = 2 }
 		}
 		character_event = { id = gnostic_cants_agonies.203 }
 	}
 	option = {
 		name = gnostic_cants_agonies.2d
 		trigger = {
-			event_target:gnostic_cants_agonies_target ={
-				trait = infirm
-				not =  {
-					trait = blinded 
-				}
-			}
+			check_variable = { which = bodytorture value = 3 }
 		}
 		character_event = { id = gnostic_cants_agonies.204 }
 	}
 	option = {
 		name = gnostic_cants_agonies.2e
 		trigger = {
-			event_target:gnostic_cants_agonies_target ={
-				trait = blinded
-				not =  {
-					trait = eunuch 
-				}
-			}
+			check_variable = { which = bodytorture value = 4 }
 		}
 		character_event = { id = gnostic_cants_agonies.205 }
 	}	
@@ -269,6 +247,7 @@ character_event = {
 				death = { death_reason = death_execution killer = ROOT } 
 			}
 		}
+		set_variable = { which = bodytorture value = 1 }
 		character_event = { id = gnostic_cants_agonies.99999 }	
 	}
 }
@@ -296,6 +275,7 @@ character_event = {
 				death = { death_reason = death_execution killer = ROOT } 
 			}			
 		}
+		set_variable = { which = bodytorture value = 2 }
 		character_event = { id = gnostic_cants_agonies.99999 }
 	}
 }
@@ -323,6 +303,7 @@ character_event = {
 				death = { death_reason = death_execution killer = ROOT } 
 			}			
 		}
+		set_variable = { which = bodytorture value = 3 }
 		character_event = { id = gnostic_cants_agonies.99999 }	
 	}
 }
@@ -349,6 +330,7 @@ character_event = {
 				death = { death_reason = death_execution killer = ROOT } 
 			}			
 		}
+		set_variable = { which = bodytorture value = 4 }
 		character_event = { id = gnostic_cants_agonies.99999 }		
 	}
 }
@@ -376,6 +358,7 @@ character_event = {
 				death = { death_reason = death_execution killer = ROOT } 
 			}			
 		}
+		set_variable = { which = bodytorture value = 0 }
 		character_event = { id = gnostic_cants_agonies.99999 }	
 	}
 }
@@ -395,11 +378,7 @@ character_event = {
 	option = {
 		name = gnostic_cants_agonies.3a
 		trigger = {
-			event_target:gnostic_cants_agonies_target ={
-				not =  {
-					trait = possessed
-				}
-			}
+			check_variable = { which = mentaltorture value = 0 }
 		}
 		character_event = { id = gnostic_cants_agonies.301 }
 		break = yes
@@ -407,12 +386,7 @@ character_event = {
 	option = {
 		name = gnostic_cants_agonies.3b
 		trigger = {
-			event_target:gnostic_cants_agonies_target ={
-				trait = possessed
-				not =  {
-					trait = lunatic 
-				}
-			}
+			check_variable = { which = mentaltorture value = 1 }
 		}		
 		character_event = { id = gnostic_cants_agonies.302 }
 		
@@ -420,36 +394,21 @@ character_event = {
 	option = {
 		name = gnostic_cants_agonies.3c
 		trigger = {
-			event_target:gnostic_cants_agonies_target ={
-				trait = lunatuc
-				not =  {
-					trait = slow 
-				}
-			}
+			check_variable = { which = mentaltorture value = 2 }
 		}
 		character_event = { id = gnostic_cants_agonies.303 }
 	}
 	option = {
 		name = gnostic_cants_agonies.3d
 		trigger = {
-			event_target:gnostic_cants_agonies_target ={
-				trait = slow
-				not =  {
-					trait = imbecile 
-				}
-			}
+			check_variable = { which = mentaltorture value = 3 }
 		}
 		character_event = { id = gnostic_cants_agonies.304 }
 	}
 	option = {
 		name = gnostic_cants_agonies.3e
 		trigger = {
-			event_target:gnostic_cants_agonies_target ={
-				trait = imbecile
-				not =  {
-					trait = incapable 
-				}
-			}
+			check_variable = { which = mentaltorture value = 4 }
 		}
 		character_event = { id = gnostic_cants_agonies.305 }
 	}	
@@ -477,6 +436,7 @@ character_event = {
 				death = { death_reason = death_execution killer = ROOT } 
 			}
 		}
+		set_variable = { which = mentaltorture value = 1 }
 		character_event = { id = gnostic_cants_agonies.99999 }	
 	}
 }
@@ -504,6 +464,7 @@ character_event = {
 				death = { death_reason = death_execution killer = ROOT } 
 			}			
 		}
+		set_variable = { which = mentaltorture value = 2 }
 		character_event = { id = gnostic_cants_agonies.99999 }
 	}
 }
@@ -531,6 +492,7 @@ character_event = {
 				death = { death_reason = death_execution killer = ROOT } 
 			}			
 		}
+		set_variable = { which = mentaltorture value = 3 }
 		character_event = { id = gnostic_cants_agonies.99999 }	
 	}
 }
@@ -557,6 +519,7 @@ character_event = {
 				death = { death_reason = death_execution killer = ROOT } 
 			}			
 		}
+		set_variable = { which = mentaltorture value = 4 }
 		character_event = { id = gnostic_cants_agonies.99999 }		
 	}
 }
@@ -584,6 +547,7 @@ character_event = {
 				death = { death_reason = death_execution killer = ROOT } 
 			}			
 		}
+		set_variable = { which = mentaltorture value = 0 }
 		character_event = { id = gnostic_cants_agonies.99999 }	
 	}
 }
