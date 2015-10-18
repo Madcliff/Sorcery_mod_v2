@@ -192,7 +192,6 @@ character_event = {
 		trigger = {
 			check_variable = { which = bodytorture value = 0 }
 			}
-		}
 		character_event = { id = gnostic_cants_agonies.201 }
 	}
 	option = {

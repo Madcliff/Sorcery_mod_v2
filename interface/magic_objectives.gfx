@@ -33,6 +33,22 @@ spriteTypes = {
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
-	}	
+	}
 	
+	spriteType = {
+		name = "GFX_obj_obj_meditate_on_life"
+		texturefile = "gfx/objectives/meditation_objective.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+
+	spriteType = {
+		name = "GFX_obj_meditate_on_knowledge"
+		texturefile = "gfx/objectives/objective_meditation.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}		
 }
+
