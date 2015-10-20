@@ -1,3 +1,7 @@
 cant_object_decision;Spell Cant Object;x
 cant_object_decision_desc;Select the object of your Cants focus.;x
+cant_target.1_desc;Choose the targets or subjects of your magic.;x
+cant_target.1a;Select Object;x
+cant_target.1b;Select Subject;x
+cant_target.1c;Clear Subject and Object;x
 

@@ -2,6 +2,7 @@ obj_study_the_gnosis = {
 	type = character
 	
 	allow = {
+		ai = no
 		prisoner = no
 		is_adult = yes
 		NOT = {	trait = school_gnosis_5 }

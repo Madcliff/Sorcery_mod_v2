@@ -4,7 +4,7 @@ targetted_decisions = {
 		filter = sub_realm
 		
 		from_potential = {
-			
+			ai = no
 		}
 		potential = {
 			age = 16

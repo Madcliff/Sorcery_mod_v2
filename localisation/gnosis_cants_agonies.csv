@@ -13,8 +13,8 @@ gnostic_cants_agonies.201;Words of Wounding;x
 gnostic_cants_agonies.201_desc;As you sing your cant their body bends, untill at last bone breaks and skin tears, leaving them afflicted with bodliy agonies.;x
 gnostic_cants_agonies.202;Words of Maiming;x
 gnostic_cants_agonies.202_desc;There is a point in which your cant begins to take what cannot be given, to break what cannot be fixed, as you sing, your words maim.;x
-gnostic_cants_agonies.202;Words of Infirmity;x
-gnostic_cants_agonies.202_desc;Singing your cants till the body is a broken blistered husk, others would stop for the sight of your victim is such, that most have not the stumach.;x
+gnostic_cants_agonies.203;Words of Infirmity;x
+gnostic_cants_agonies.203_desc;Singing your cants till the body is a broken blistered husk, others would stop for the sight of your victim is such, that most have not the stumach.;x
 gnostic_cants_agonies.204;Words of Blinding;x
 gnostic_cants_agonies.204_desc;The deepest darkness of your songs are now visible for all who see, as eyes begin to buldge and buckle, till at last they burst.;x
 gnostic_cants_agonies.205;Words of Castration;x 
@@ -30,10 +30,19 @@ gnostic_cants_agonies.301;Words of Demons;x
 gnostic_cants_agonies.301_desc;You sing your cants till sanity slowly flees from their eyes, tormenting them with the shadow of demons that do not exist.;x
 gnostic_cants_agonies.302;Words of Lunacy;x
 gnostic_cants_agonies.302_desc;Even the nightmares of men can go to far, to go to a point at whcih raw madness is all they know.;x
-gnostic_cants_agonies.302;Words of Mental Stillness;x
-gnostic_cants_agonies.302_desc;By singing your songs you have inflicted such scars that the very cognitive power of your victim is slowly slipping away.;x
+gnostic_cants_agonies.303;Words of Mental Stillness;x
+gnostic_cants_agonies.303_desc;By singing your songs you have inflicted such scars that the very cognitive power of your victim is slowly slipping away.;x
 gnostic_cants_agonies.304;Words of Mental Emptiness;x
 gnostic_cants_agonies.304_desc;All thought has now left the eyes of the your poor victim, reducing them to a husk of nothing.;x
 gnostic_cants_agonies.305;Words of Mental Death;x 
 gnostic_cants_agonies.305_desc;The final word of your cant breaks the very basis of the soul, leaving them a shattered destroyed container of what once was a man.;x
-
+gnostic_cants_agonies.201a;Wound!;x
+gnostic_cants_agonies.202a;Maim!;x
+gnostic_cants_agonies.203a;Infirm!;x
+gnostic_cants_agonies.204a;Blind!;x
+gnostic_cants_agonies.205a;Castrate!;x
+gnostic_cants_agonies.301a;Be damned!;x
+gnostic_cants_agonies.302a;Be unhinged!;x
+gnostic_cants_agonies.303a;Be slow!;x
+gnostic_cants_agonies.304a;Be lost!;x
+gnostic_cants_agonies.305a;Be Broken!;x

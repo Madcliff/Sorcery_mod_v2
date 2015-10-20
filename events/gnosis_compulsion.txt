@@ -404,7 +404,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.3
-	desc = gnostic_cants_compulsion3a_desc
+	desc = gnostic_cants_compulsion.3_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -424,7 +424,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.301
-	desc = gnostic_cants_compulsion301_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -472,7 +472,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.401
-	desc = gnostic_cants_compulsion.401_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -521,7 +521,7 @@ character_event = {
 	
 	character_event = {
 	id = gnostic_cants_compulsion.501
-	desc = gnostic_cants_compulsion.501_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -570,7 +570,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.601
-	desc = gnostic_cants_compulsion.601_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -620,7 +620,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.701
-	desc = gnostic_cants_compulsion.701_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -670,7 +670,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.801
-	desc = gnostic_cants_compulsion.801_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -721,7 +721,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.901
-	desc = gnostic_cants_compulsion.901_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -772,7 +772,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1001
-	desc = gnostic_cants_compulsion.1001_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -822,7 +822,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1101
-	desc = gnostic_cants_compulsion.1101_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -872,7 +872,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1201
-	desc = gnostic_cants_compulsion.1201_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -921,7 +921,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1301
-	desc = gnostic_cants_compulsion.1301_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -971,7 +971,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1401
-	desc = gnostic_cants_compulsion.1401_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1023,7 +1023,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1501
-	desc = gnostic_cants_compulsion.1501_desc
+	desc = gnostic_cants_compulsion.301_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1075,7 +1075,7 @@ character_event = {
 	
 character_event = {
 	id = gnostic_cants_compulsion.302
-	desc = gnostic_cants_compulsion302_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1124,7 +1124,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.402
-	desc = gnostic_cants_compulsion.402_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1173,7 +1173,7 @@ character_event = {
 	
 	character_event = {
 	id = gnostic_cants_compulsion.502
-	desc = gnostic_cants_compulsion.502_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1222,7 +1222,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.602
-	desc = gnostic_cants_compulsion.602_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1272,7 +1272,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.702
-	desc = gnostic_cants_compulsion.702_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1322,7 +1322,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.802
-	desc = gnostic_cants_compulsion.802_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1373,7 +1373,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.902
-	desc = gnostic_cants_compulsion.902_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1421,7 +1421,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1002
-	desc = gnostic_cants_compulsion.1002_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1471,7 +1471,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1102
-	desc = gnostic_cants_compulsion.1102_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1521,7 +1521,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1202
-	desc = gnostic_cants_compulsion.1202_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1570,7 +1570,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1302
-	desc = gnostic_cants_compulsion.1302_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1620,7 +1620,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1402
-	desc = gnostic_cants_compulsion.1402_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1672,7 +1672,7 @@ character_event = {
 
 character_event = {
 	id = gnostic_cants_compulsion.1502
-	desc = gnostic_cants_compulsion.1502_desc
+	desc = gnostic_cants_compulsion.302_desc
 	picture = GFX_evt_mongols
 	
 	is_triggered_only = yes
@@ -1729,7 +1729,7 @@ character_event = {
 	is_triggered_only = yes	
 	immediate = {	
 		if = {
-			limit = { check_variable = { which = "spell_power" value = "var1"   } } 
+			limit = { check_variable = { which = spell_power which = var1   } } 
 			subtract_variable  = { which = "spell_power" which  = "var1" }
 		}		
 	}

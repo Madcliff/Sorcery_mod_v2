@@ -247,7 +247,7 @@ character_event = {
 			}
 		}
 		set_variable = { which = bodytorture value = 1 }
-		character_event = { id = gnostic_cants_agonies.99999 }	
+		character_event = { id = gnostic_cants_agonies.99998 }	
 	}
 }
 
@@ -275,7 +275,7 @@ character_event = {
 			}			
 		}
 		set_variable = { which = bodytorture value = 2 }
-		character_event = { id = gnostic_cants_agonies.99999 }
+		character_event = { id = gnostic_cants_agonies.99998 }
 	}
 }
 
@@ -303,7 +303,7 @@ character_event = {
 			}			
 		}
 		set_variable = { which = bodytorture value = 3 }
-		character_event = { id = gnostic_cants_agonies.99999 }	
+		character_event = { id = gnostic_cants_agonies.99998 }	
 	}
 }
 
@@ -330,7 +330,7 @@ character_event = {
 			}			
 		}
 		set_variable = { which = bodytorture value = 4 }
-		character_event = { id = gnostic_cants_agonies.99999 }		
+		character_event = { id = gnostic_cants_agonies.99998 }		
 	}
 }
 
@@ -358,7 +358,7 @@ character_event = {
 			}			
 		}
 		set_variable = { which = bodytorture value = 0 }
-		character_event = { id = gnostic_cants_agonies.99999 }	
+		character_event = { id = gnostic_cants_agonies.99998 }	
 	}
 }
 
@@ -436,7 +436,7 @@ character_event = {
 			}
 		}
 		set_variable = { which = mentaltorture value = 1 }
-		character_event = { id = gnostic_cants_agonies.99999 }	
+		character_event = { id = gnostic_cants_agonies.99998 }	
 	}
 }
 
@@ -464,7 +464,7 @@ character_event = {
 			}			
 		}
 		set_variable = { which = mentaltorture value = 2 }
-		character_event = { id = gnostic_cants_agonies.99999 }
+		character_event = { id = gnostic_cants_agonies.99998 }
 	}
 }
 
@@ -492,7 +492,7 @@ character_event = {
 			}			
 		}
 		set_variable = { which = mentaltorture value = 3 }
-		character_event = { id = gnostic_cants_agonies.99999 }	
+		character_event = { id = gnostic_cants_agonies.99998 }	
 	}
 }
 
@@ -519,7 +519,7 @@ character_event = {
 			}			
 		}
 		set_variable = { which = mentaltorture value = 4 }
-		character_event = { id = gnostic_cants_agonies.99999 }		
+		character_event = { id = gnostic_cants_agonies.99998 }		
 	}
 }
 
@@ -547,19 +547,19 @@ character_event = {
 			}			
 		}
 		set_variable = { which = mentaltorture value = 0 }
-		character_event = { id = gnostic_cants_agonies.99999 }	
+		character_event = { id = gnostic_cants_agonies.99998 }	
 	}
 }
 
 	
 character_event = {
-	id = gnostic_cants_agonies.99999
-	desc = gnostic_cants_agonies.99999_desc
+	id = gnostic_cants_agonies.99998
+	desc = gnostic_cants_agonies.99998_desc
 	picture = GFX_evt_mongols
 	is_triggered_only = yes	
 	immediate = {	
 		if = {
-			limit = { check_variable = { which = "spell_power" value = "var1"   } } 
+			limit = { check_variable = { which = spell_power which = var1   } } 
 			subtract_variable  = { which = "spell_power" which  = "var1" }
 		}		
 	}

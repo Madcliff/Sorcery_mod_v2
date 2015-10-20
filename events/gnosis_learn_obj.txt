@@ -27,18 +27,6 @@ mean_time_to_happen = {
 		factor = 0.5 # Increases chances by half
 		trait = diligent
 	}
-	modifier = {
-		factor = 0.1 # Increases chances by ten
-		location = { province = 334 }
-	}	
-		modifier = {
-		factor = 0.1 # Increases chances by ten
-		location = { province = 802 }
-	}
-	modifier = {
-		factor = 0.1 # Increases chances by ten
-		location = { province = 496 }
-	}	
 		modifier = {
 		factor = 0.5 # Increases chances by ten
 		trait = mystic
@@ -75,7 +63,7 @@ character_event = {
 	trigger = {
 		has_ambition = obj_study_the_gnosis 
 		prisoner = no
-		trait = sorcery_inniate
+		trait = school_gnosis_1
 		NOT = {trait = school_gnosis_2}			
 		NOT = { trait = incapable }
 		check_variable = { which = "gnosiscantssung" value = 4 }				
@@ -90,18 +78,6 @@ mean_time_to_happen = {
 		factor = 0.5 # Increases chances by half
 		trait = diligent
 	}
-	modifier = {
-		factor = 0.1 # Increases chances by ten
-		location = { province = 334 }
-	}	
-		modifier = {
-		factor = 0.1 # Increases chances by ten
-		location = { province = 802 }
-	}
-	modifier = {
-		factor = 0.1 # Increases chances by ten
-		location = { province = 496 }
-	}	
 		modifier = {
 		factor = 0.5 # Increases chances by ten
 		trait = mystic
@@ -154,18 +130,6 @@ mean_time_to_happen = {
 		factor = 0.5 # Increases chances by half
 		trait = diligent
 	}
-	modifier = {
-		factor = 0.1 # Increases chances by ten
-		location = { province = 334 }
-	}	
-		modifier = {
-		factor = 0.1 # Increases chances by ten
-		location = { province = 802 }
-	}
-	modifier = {
-		factor = 0.1 # Increases chances by ten
-		location = { province = 496 }
-	}	
 		modifier = {
 		factor = 0.5 # Increases chances by ten
 		trait = mystic

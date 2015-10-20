@@ -4,7 +4,7 @@ guiTypes = {
 		name = "focus_view"
 		backGround ="background_fv"
 		position = { x=545 y=100 }
-		size = { x=300 y=300 }
+		size = { x=500 y=500 }
 		moveable = 1
 		dontRender = ""
 		horizontalBorder = "0"
@@ -138,7 +138,7 @@ guiTypes = {
 		iconType = {
 			name ="focusicon_11_selected"
 			spriteType = "GFX_focusview_selected_focus"
-			position = { x = 3 y = 154 }
+			position = { x = -43 y = 154 }
 		}		
 	}
 	
@@ -192,6 +192,6 @@ guiTypes = {
 	}
 	positionType = {
 		name = "focusicon_11"
-		position = { x = 20 y = 171 }
+		position = { x = -30 y = 171 }
 	}
 }
