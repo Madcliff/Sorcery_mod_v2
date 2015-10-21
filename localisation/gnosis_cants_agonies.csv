@@ -1,4 +1,4 @@
-gnostic_cants_agonies_decision;Gnosis, Cants of Agony;x
+gnostic_cants_agonies_decision;Gnosis, Sing the Cants of Agony;x
 gnostic_cants_agonies_decision_desc;The Gnostic Cants of Agony are the secret horrors of the school of logic.;x
 gnostic_cants_agonies.1;The Cants of Agony.;x
 gnostic_cants_agonies.1_desc;With the world bending to your song, it is but a simple thing to wrack your victim with agonies unnumbered, with pain unequaled.;x
@@ -46,3 +46,7 @@ gnostic_cants_agonies.302a;Be unhinged!;x
 gnostic_cants_agonies.303a;Be slow!;x
 gnostic_cants_agonies.304a;Be lost!;x
 gnostic_cants_agonies.305a;Be Broken!;x
+gnostic_cants_agonies.9999;Your Singing has succeed.;x
+gnostic_cants_agonies.9999_desc;You have begun the process of shaping your victim to your desire. Do you wish to continue?;x
+gnostic_cants_agonies.9999a;Yes;x
+gnostic_cants_agonies.9999b;No;x
