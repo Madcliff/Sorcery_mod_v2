@@ -24,7 +24,6 @@ targetted_decisions = {
 		}
 	
 		allow = {
-			in_command = yes
 			NOT = {
 				has_character_modifier = school_gnosis_magic_cooldown 
 #				High Magic is Immune to the province drain magic effect. 
