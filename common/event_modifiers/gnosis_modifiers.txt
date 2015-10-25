@@ -22,6 +22,6 @@ learning = -1
 
 body_torture_1 = {
 	health = -0.1
-	fertility = - 0.1
+	fertility = -0.1
 	combat_skill = -0.1
 }

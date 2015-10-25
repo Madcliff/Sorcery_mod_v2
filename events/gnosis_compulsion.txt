@@ -126,7 +126,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 2}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -139,7 +139,7 @@ character_event = {
 				}			
 				learning = 15
 			}
-			change_variable = { which = "spell_power" value = 3}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -152,7 +152,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 4}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -165,7 +165,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 5}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -178,7 +178,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 6}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -191,7 +191,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 7}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {			
@@ -204,7 +204,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 8}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -217,7 +217,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 9}
+			change_variable = { which = "spell_power" value = 1}
 		}		
 					
 
@@ -374,9 +374,21 @@ character_event = {
 		
 	option = {
 			name = gnostic_cants_compulsion.20203a
-			trigger = { OR = { event_target:gnostic_cants_compulsion_subject = { trait = lunatic  } event_target:gnostic_cants_compulsion_subject = { has_opinion_modifier = { who = ROOT modifier = opinion_mind_control } } event_target:gnostic_cants_compulsion_subject = { event_target:gnostic_cants_compulsion_object = { is_guardian = yes } }} check_variable = { which = "spell_power" value = 5   } } 					
+			trigger = { OR = { event_target:gnostic_cants_compulsion_subject = { trait = lunatic  } event_target:gnostic_cants_compulsion_subject = { has_opinion_modifier = { who = ROOT modifier = opinion_mind_control } } event_target:gnostic_cants_compulsion_subject = { event_target:gnostic_cants_compulsion_object = { is_guardian = yes } }} check_variable = { which = "spell_power" value = 3   } } 					
 			event_target:gnostic_cants_compulsion_subject = {	
 				abdicate_to = event_target:gnostic_cants_compulsion_object
+			}
+			#clr_character_flag = Magic_Divining
+			#set_character_flag = sorcery
+			#hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }			
+			set_variable = {which = "var1" value = 3}
+			character_event = { id = gnostic_cants_compulsion.9999 }
+		}
+	option = {
+			name = gnostic_cants_compulsion.20203b
+			trigger = { OR = { event_target:gnostic_cants_compulsion_subject = { trait = lunatic  } event_target:gnostic_cants_compulsion_subject = { has_opinion_modifier = { who = ROOT modifier = opinion_mind_control } } event_target:gnostic_cants_compulsion_subject = { event_target:gnostic_cants_compulsion_object = { is_guardian = yes } }} event_target:gnostic_cants_compulsion_object = { higher_tier_than = event_target:gnostic_cants_compulsion_subject }  check_variable = { which = "spell_power" value = 5   } event_target:gnostic_cants_compulsion_subject = { independent = yes }   NOT = { event_target:gnostic_cants_compulsion_object = { is_liege_or_above = event_target:gnostic_cants_compulsion_subject } }} 			
+			event_target:gnostic_cants_compulsion_subject = {
+					set_defacto_liege = event_target:gnostic_cants_compulsion_object 				
 			}
 			#clr_character_flag = Magic_Divining
 			#set_character_flag = sorcery
@@ -384,20 +396,41 @@ character_event = {
 			set_variable = {which = "var1" value = 5}
 			character_event = { id = gnostic_cants_compulsion.9999 }
 		}
-	option = {
-			name = gnostic_cants_compulsion.20203b
-			trigger = { OR = { event_target:gnostic_cants_compulsion_subject = { trait = lunatic  } event_target:gnostic_cants_compulsion_subject = { has_opinion_modifier = { who = ROOT modifier = opinion_mind_control } } event_target:gnostic_cants_compulsion_subject = { event_target:gnostic_cants_compulsion_object = { is_guardian = yes } }} event_target:gnostic_cants_compulsion_object = { higher_tier_than = event_target:gnostic_cants_compulsion_subject }  check_variable = { which = "spell_power" value = 10   } event_target:gnostic_cants_compulsion_subject = { independent = yes }   NOT = { event_target:gnostic_cants_compulsion_object = { is_liege_or_above = event_target:gnostic_cants_compulsion_subject } }} 			
-			event_target:gnostic_cants_compulsion_subject = {
-					set_defacto_liege = event_target:gnostic_cants_compulsion_object 				
+		
+		
+			option = {
+			name = gnostic_cants_compulsion.20203c
+			trigger = { event_target:gnostic_cants_compulsion_subject = root OR = { event_target:gnostic_cants_compulsion_subject = { trait = lunatic  } event_target:gnostic_cants_compulsion_subject = { has_opinion_modifier = { who = ROOT modifier = opinion_mind_control } } event_target:gnostic_cants_compulsion_subject = { event_target:gnostic_cants_compulsion_object = { is_guardian = yes } }} event_target:gnostic_cants_compulsion_object = { higher_tier_than = event_target:gnostic_cants_compulsion_subject }  check_variable = { which = "spell_power" value = 5   } event_target:gnostic_cants_compulsion_subject = { independent = yes }   NOT = { event_target:gnostic_cants_compulsion_object = { is_liege_or_above = event_target:gnostic_cants_compulsion_subject } }} 			
+			event_target:gnostic_cants_compulsion_object = {
+			dynasty_head  = {
+				save_event_target_as = dynastyflip
 			}
-			#clr_character_flag = Magic_Divining
-			#set_character_flag = sorcery
-			#hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }			
-			set_variable = {which = "var1" value = 10}
-			character_event = { id = gnostic_cants_compulsion.9999 }
+				set_reincarnation = event_target:gnostic_cants_compulsion_object
+				dynasty = event_target:gnostic_cants_compulsion_object
+				character_event = { id = gnostic_cants_compulsion.99997 }
+				add_trait = school_gnosis_5
+				copy_random_personality_trait = event_target:gnostic_cants_compulsion_subject
+				copy_random_personality_trait = event_target:gnostic_cants_compulsion_subject
+				copy_random_personality_trait = event_target:gnostic_cants_compulsion_subject
+				copy_random_personality_trait = event_target:gnostic_cants_compulsion_subject
+				copy_random_personality_trait = event_target:gnostic_cants_compulsion_subject
+				copy_random_personality_trait = event_target:gnostic_cants_compulsion_subject
+				copy_random_personality_trait = event_target:gnostic_cants_compulsion_subject
+				copy_random_personality_trait = event_target:gnostic_cants_compulsion_subject
+			}
+			event_target:gnostic_cants_compulsion_subject = {			
+			abdicate_to = event_target:gnostic_cants_compulsion_object
+				death = {
+					death_reason = death_natural
+					killer = ROOT
+				}
+			}
+			event_target:gnostic_cants_compulsion_object = {			
+				dynasty = event_target:dynastyflip
+			}
 		}
 	option = {
-		name = gnostic_cants_compulsion.20203c
+		name = gnostic_cants_compulsion.20203d
 		character_event = { id = gnostic_cants_compulsion.202 }			
 	}		
 }
@@ -1050,14 +1083,14 @@ character_event = {
 	}
 	option = {
 		name = gnostic_cants_compulsion.1501c
-		trigger =  { check_variable = { which = "spell_power" value = 1   } event_target:gnostic_cants_compulsion_subject = { not = { trait = incapable } } }
+		trigger =  { check_variable = { which = "spell_power" value = 5   } event_target:gnostic_cants_compulsion_subject = { not = { trait = incapable } } }
 		event_target:gnostic_cants_compulsion_subject = {	
 			add_trait = incapable 
 		}
 			#clr_character_flag = Magic_Divining
 			#set_character_flag = sorcery
 			#hidden_tooltip = { character_event = { id = cooldown.1 days = 90 } }		
-			set_variable = {which = "var1" value = 10}
+			set_variable = {which = "var1" value = 5}
 			character_event = { id = gnostic_cants_compulsion.9999 }
 	}
 	option = {

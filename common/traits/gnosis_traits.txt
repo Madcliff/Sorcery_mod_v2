@@ -34,10 +34,12 @@ school_gnosis_4 = {
 	
 }	
 school_gnosis_5 = {
-	ruler_designer_cost	= 20
+	ruler_designer_cost	= -2000
 	opposites = { school_gnosis_4 school_gnosis_3 school_gnosis_2 school_gnosis_1 school_anagogis_5 school_anagogis_4 school_anagogis_3 school_anagogis_2 school_anagogis_1 }
     customizer = yes
 	random = no	
+	demesne_size = 12
+	immortal = yes 
 	cached = yes
 	
 }

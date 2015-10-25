@@ -36,7 +36,7 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-		name = "GFX_obj_obj_meditate_on_life"
+		name = "GFX_obj_meditate_on_life"
 		texturefile = "gfx/objectives/meditation_objective.tga"
 		noOfFrames = 1
 		norefcount = yes
@@ -52,10 +52,17 @@ spriteTypes = {
 	}	
 	spriteType = {
 		name = "GFX_focus_magic_scholarship"
-		texturefile = "gfx/objectives/objective_meditation.tga"
+		texturefile = "gfx/ambitions/focus_scholarship.tga"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
 	}		
+	spriteType = {
+		name = "GFX_focus_focus_magic_scholarship"
+		texturefile = "gfx/ambitions/focus_scholarship.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}			
 }
 

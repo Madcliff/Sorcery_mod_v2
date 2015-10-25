@@ -4,43 +4,10 @@ character_event = {
 	desc = meditation_objectives.1_desc
 	picture = GFX_evt_comet
 	border = GFX_event_normal_frame_religion
+	hide_window = yes
 
 	trigger = {
 		has_ambition = obj_meditate_on_knowledge	
-	}
-mean_time_to_happen = {
-	years = 2.5
-	modifier = {
-		factor = 2 # Decreases chances by half
-		NOT = { trait = genius }
-	}
-	modifier = {
-		factor = 0.5 # Increases chances by half
-		trait = diligent
-	}	
-		modifier = {
-		factor = 0.5 # Increases chances by ten
-		trait = mystic
-	}
-		modifier = {
-		factor = 0.5 # Increases chances by ten
-		trait = scholar
-	}	
-	
-}
-	option = {
-		name = meditation_objectives.1a
-			change_learning = 1		
-		}
-}
-character_event = {
-	id = meditation_objectives.2
-	desc = meditation_objectives.2_desc
-	picture = GFX_evt_comet
-	border = GFX_event_normal_frame_religion
-
-	trigger = {
-		has_ambition = obj_meditate_on_life	
 	}
 mean_time_to_happen = {
 	years = 5
@@ -60,7 +27,203 @@ mean_time_to_happen = {
 		factor = 0.5 # Increases chances by ten
 		trait = scholar
 	}	
+		modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = genius
+	}	
 	
+}
+	option = {
+		name = meditation_objectives.1a
+			change_learning = 1	
+		}
+}
+
+character_event = {
+	id = meditation_objectives.2
+	desc = meditation_objectives.2_desc
+	picture = GFX_evt_comet
+	border = GFX_event_normal_frame_religion
+ hide_window = yes
+	trigger = {
+		has_ambition = obj_meditate_on_knowledge	
+	}
+mean_time_to_happen = {
+	years = 5
+	modifier = {
+		factor = 2 # Decreases chances by half
+		NOT = { trait = genius }
+	}
+	modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = diligent
+	}	
+		modifier = {
+		factor = 0.5 # Increases chances by ten
+		trait = mystic
+	}
+		modifier = {
+		factor = 0.5 # Increases chances by ten
+		trait = scholar
+	}	
+		modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = genius
+	}	
+	
+}
+	option = {
+		name = meditation_objectives.1a
+			change_intrigue = 1	
+		}
+}
+
+character_event = {
+	id = meditation_objectives.3
+	desc = meditation_objectives.1_desc
+	picture = GFX_evt_comet
+	border = GFX_event_normal_frame_religion
+ hide_window = yes
+	trigger = {
+		has_ambition = obj_meditate_on_knowledge	
+	}
+mean_time_to_happen = {
+	years = 5
+	modifier = {
+		factor = 2 # Decreases chances by half
+		NOT = { trait = genius }
+	}
+	modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = diligent
+	}	
+		modifier = {
+		factor = 0.5 # Increases chances by ten
+		trait = mystic
+	}
+		modifier = {
+		factor = 0.5 # Increases chances by ten
+		trait = scholar
+	}	
+		modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = genius
+	}	
+	
+}
+	option = {
+		name = meditation_objectives.1a
+			change_diplomacy = 1	
+		}
+}
+character_event = {
+	id = meditation_objectives.4
+	desc = meditation_objectives.4_desc
+	picture = GFX_evt_comet
+	border = GFX_event_normal_frame_religion
+ hide_window = yes
+	trigger = {
+		has_ambition = obj_meditate_on_knowledge	
+	}
+mean_time_to_happen = {
+	years = 5
+	modifier = {
+		factor = 2 # Decreases chances by half
+		NOT = { trait = genius }
+	}
+	modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = diligent
+	}	
+		modifier = {
+		factor = 0.5 # Increases chances by ten
+		trait = mystic
+	}
+		modifier = {
+		factor = 0.5 # Increases chances by ten
+		trait = scholar
+	}	
+		modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = genius
+	}	
+	
+}
+	option = {
+		name = meditation_objectives.1a
+			change_stewardship = 1	
+		}
+}
+character_event = {
+	id = meditation_objectives.6
+	desc = meditation_objectives.1_desc
+	picture = GFX_evt_comet
+	border = GFX_event_normal_frame_religion
+ hide_window = yes
+	trigger = {
+		has_ambition = obj_meditate_on_knowledge	
+	}
+mean_time_to_happen = {
+	years = 5
+	modifier = {
+		factor = 2 # Decreases chances by half
+		NOT = { trait = genius }
+	}
+	modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = diligent
+	}	
+		modifier = {
+		factor = 0.5 # Increases chances by ten
+		trait = mystic
+	}
+		modifier = {
+		factor = 0.5 # Increases chances by ten
+		trait = scholar
+	}	
+		modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = genius
+	}	
+	
+}
+	option = {
+		name = meditation_objectives.1a
+			change_martial = 1	
+		}
+}
+
+character_event = {
+	id = meditation_objectives.20
+	desc = meditation_objectives.2_desc
+	picture = GFX_evt_comet
+	border = GFX_event_normal_frame_religion
+ hide_window = yes
+	trigger = {
+		has_ambition = obj_meditate_on_life	
+	}
+mean_time_to_happen = {
+	years = 10
+	modifier = {
+		factor = 2 # Decreases chances by half
+		NOT = { trait = genius }
+	}
+	modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = diligent
+	}	
+		modifier = {
+		factor = 0.5 # Increases chances by ten
+		trait = mystic
+	}
+		modifier = {
+		factor = 0.5 # Increases chances by ten
+		trait = scholar
+	}	
+			modifier = {
+		factor = 0.5 # Increases chances by half
+		trait = genius
+	}	
 }
 	option = {
 		name = meditation_objectives.2a

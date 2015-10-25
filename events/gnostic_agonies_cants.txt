@@ -58,7 +58,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 2}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -71,7 +71,7 @@ character_event = {
 				}			
 				learning = 15
 			}
-			change_variable = { which = "spell_power" value = 3}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -84,7 +84,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 4}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -97,7 +97,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 5}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -110,7 +110,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 6}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -123,7 +123,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 7}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {			
@@ -136,7 +136,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 8}
+			change_variable = { which = "spell_power" value = 1}
 		}
 		if = {
 			limit = {
@@ -149,7 +149,7 @@ character_event = {
 					trait = school_gnosis_5					
 				}				
 			}
-			change_variable = { which = "spell_power" value = 9}
+			change_variable = { which = "spell_power" value = 1}
 		}		
 					
 		set_variable = { which = bodytorture value = 0}

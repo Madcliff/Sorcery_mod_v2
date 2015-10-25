@@ -11,3 +11,19 @@ on_yearly_childhood_pulse = {
 		#gnosiseducation.1
 	}
 }
+
+on_startup = {
+	events = {
+		gnostic_legion.1
+	}
+}
+on_yearly_pulse = {
+	events = {
+		gnostic_legion.1
+	}
+}
+on_five_year_pulse = {
+	events = {
+		gnostic_legion.1
+	}
+}

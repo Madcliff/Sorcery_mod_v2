@@ -43,7 +43,7 @@ targetted_decisions = {
 		}
 	
 		effect = {
-			save_event_target_as = gnostic_cants_caster	
+			save_event_target_as = gnostic_war_cants_offensive_caster		
 			root = {
 				character_event = {id = gnostic_war_cants.99990}
 			}

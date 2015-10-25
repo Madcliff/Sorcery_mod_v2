@@ -1,0 +1,1536 @@
+namespace = gnostic_legion
+
+character_event = {
+    id = gnostic_legion.1
+    hide_window = yes 
+    
+    is_triggered_only = yes
+
+    trigger = {
+        trait = school_gnosis_5
+    }
+    immediate = {
+					root = {
+						capital_scope = {
+							save_event_target_as = provinceloc
+						}
+					}
+        
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_1 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_1
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_2 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_2
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_3 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_3
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_4 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_4
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_5 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_5
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_6 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_6
+            }
+        }
+								IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_7 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_7
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_8 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_8
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_9 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_9
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_10 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_10
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_11 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_11
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_12 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_12
+            }
+        }
+								IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_13 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_13
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_14 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_14
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_15 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_15
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_16 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_16
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_17 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_17
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_18 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_18
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_19 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_19
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_20 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_20
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_21 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_21
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_22 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_22
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_23 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_23
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_24 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_24
+            }
+        }
+								IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_25 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_25
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_26 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_26
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_27 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_27
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_28 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_28
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_29 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_29
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_30 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_30
+            }
+        }
+								IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_31 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_31
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_32 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_32
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_33 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_33
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_34 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_34
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_35 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_35
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion_36 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion_36
+            }
+        }
+        
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_1 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_1
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_2 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_2
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_3 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_3
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_4 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_4
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_5 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_5
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_6 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_6
+            }
+        }
+								IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_7 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_7
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_8 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_8
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_9 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_9
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_10 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_10
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_11 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_11
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_12 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_12
+            }
+        }
+								IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_13 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_13
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_14 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_14
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_15 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_15
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_16 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_16
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_17 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_17
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_18 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_18
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_19 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_19
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_20 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_20
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_21 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_21
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_22 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_22
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_23 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_23
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_24 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_24
+            }
+        }
+								IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_25 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_25
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_26 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_26
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_27 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_27
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_28 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_28
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_29 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_29
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_30 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_30
+            }
+        }
+								IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_31 }
+            }
+            spawn_unit = {
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_31
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_32 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_32
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_33 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_33
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_34 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_34
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_35 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_35
+            }
+        }
+        IF = {
+            limit = {
+                NOT = { has_earmarked_regiments = the_gnostic_legion2_36 }
+            }
+            spawn_unit = { 
+                province = event_target:provinceloc
+                home = event_target:provinceloc
+                owner = ROOT
+                troops = {
+                    heavy_infantry = { 50 3000 }
+                    archers = { 25 1500 }
+																				knights = { 25 500}
+                }
+                merge = yes
+                attrition = 0.25
+                reinforcing = yes
+                reinforce_rate_multiplier = 0.3
+                maintenance_multiplier = 1.0
+                earmark = the_gnostic_legion2_36
+            }
+        }								
+    }
+}
+
+
+
