@@ -555,14 +555,15 @@ character_event = {
 				}
 			}
 		}
-				
+		
+		event_target:gnostic_war_cants_offensive_caster = {
 			siege = {
 				enemy = {
 					morale = -0.01
 					troops = -0.01
 				}			
-			
-}
+			}
+		}
 			random = {
 				chance = 5
 				event_target:fieryconv = {
@@ -644,20 +645,7 @@ character_event = {
 			}
 		}
 			
-#			event_target:fieryconv = {
-#				any_province_character = {
-#					limit = {
-#						owner = {
-#							is_hostile = yes
-#						}
-#						in_command = yes
-#					}
-#					troops = -0.03
-#					morale = -0.03
-#				}
-#			}
-			
-		event_target:fieryconv = {				
+		event_target:gnostic_war_cants_offensive_caster = {
 			siege = {
 				enemy = {
 					morale = -0.03
@@ -747,20 +735,7 @@ character_event = {
 				}
 			}
 		}
-#			event_target:fieryconv = {
-#				any_province_character = {
-#					limit = {
-#						owner = {
-#							is_hostile = yes
-#						}
-#						in_command = yes
-#					}
-#					troops = -0.07
-#					morale = -0.07
-#				}
-#			}
-			
-		event_target:fieryconv = {				
+		event_target:gnostic_war_cants_offensive_caster = {
 			siege = {
 				enemy = {
 					morale = -0.07
