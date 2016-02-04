@@ -1,0 +1,93 @@
+targetted_decisions = {
+	create_mercenary_company_feudal_knights = {
+		filter = home_court
+		ai_target_filter = home_court
+		
+		from_potential = {
+			mercenary = no
+			primary_title = {
+				is_landless_type_title = no
+			}
+			controls_religion = no
+			holy_order = no
+			has_dlc = "Zeus"
+			is_ruler = yes
+			OR = {
+				ai = no
+				AND = {
+					OR = {
+						higher_tier_than = COUNT
+						AND = {
+							is_republic = yes
+							higher_tier_than = BARON
+						}
+					}
+					OR = {
+						trait = brilliant_strategist
+						trait = fortune_builder
+					}
+					NOR = {
+						is_primary_war_attacker = yes
+						is_primary_war_defender = yes
+					}
+				}
+			}
+			NOR = {
+				government = nomadic_government
+				has_character_modifier = mercenary_traditions
+			}
+		}
+		potential = {
+			can_be_mercenary_leader_potential_trigger = yes
+		}
+		allow = {
+			can_be_mercenary_leader_allow_trigger = yes
+			FROM = {
+				wealth = 50
+			}
+		}
+		effect = {
+			FROM = {
+				wealth = -50
+				custom_tooltip = {
+					text = CREATE_DYNAMIC_MERC_TOOLTIP
+					hidden_tooltip = {
+						primary_title = {
+							create_title = {
+								tier = COUNT
+								name = DYNAMIC_MERCENARY_COMPANY_FEUDAL
+								landless = yes
+								temporary = yes
+								reinforce = yes
+								custom_created = yes
+								culture = ROOT
+								holder = ROOT
+								base_title = THIS
+								mercenary = yes
+								replace_captain_on_death = yes
+								siphons_income_to_creator = 0.75
+								ruler = "CAPTAIN"
+								ruler_female = "CAPTAIN"
+								foa = "CAPTAIN_FOA"
+								army_template =  Warrior_knights_composition 
+								is_voter = yes
+							}
+						}
+					}
+				}
+			}
+			set_character_flag = is_mercenary_leader
+			set_character_flag = mercenary_ambition_1
+			primary_title = {
+				set_title_flag = ze_dyn_merc
+			}
+			set_defacto_liege = FROM
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.001
+		}
+	}
+}
